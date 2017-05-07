@@ -1,9 +1,11 @@
-1.ÏÂÔØnodejs µØÖ·£ºhttps://nodejs.org/en/
-2.ÏÂÔØ³É¹¦Ö®ºó£¬nodejsºÍnpm¶¼°²×°ºÃÁË£¬ÒòÎªnpm¼¯³ÉÔÚnodejsÉÏ£¨nodejs -version,npm -vesrion£©
-3.ĞŞ¸ÄnodejsµÄÈ«¾ÖÎÄ¼şÎ»ÖÃºÍ»º´æÎÄ¼şÎ»ÖÃ£º
-	1.ÔÚnodejsµÄ°²×°Ä¿Â¼ÏÂĞÂ½¨Á½¸öÎÄ¼ş£ºnode_cache,node_global
-	2.´ò¿ªcmd£¬Ö´ĞĞÒÔÏÂÓï¾änpm config set prefix "C:\Program Files\nodejs\node_global£¨node_globalµÄÄ¿Â¼£©(Õâ¸öÄ¿Â¼¿ÉÒÔÏÈ²»´´½¨)"
-			       npm config set cache "C:\Program Files\nodejs\node_cache£¨node_cacheµÄÄ¿Â¼£©"
-	3.ÔÚÏµÍ³±äÁ¿ÏÂºÍÓÃ»§±äÁ¿ÏÂĞÂ½¨"NODE_PATH"£¬ÊäÈë¡±C:\Program Files\nodejs\node_global\node_modules£¨node_globalµÄÄ¿Â¼£©"
-4.ÏÂÔØwebstorm(ÂÔ);	
+1.ä¸‹è½½nodejs åœ°å€ï¼šhttps://nodejs.org/en/
+2.ä¸‹è½½æˆåŠŸä¹‹åï¼Œnodejså’Œnpméƒ½å®‰è£…å¥½äº†ï¼Œå› ä¸ºnpmé›†æˆåœ¨nodejsä¸Šï¼ˆnodejs -version,npm -vesrionï¼‰
+3.ä¿®æ”¹nodejsçš„å…¨å±€æ–‡ä»¶ä½ç½®å’Œç¼“å­˜æ–‡ä»¶ä½ç½®ï¼š
+	1.åœ¨nodejsçš„å®‰è£…ç›®å½•ä¸‹æ–°å»ºä¸¤ä¸ªæ–‡ä»¶ï¼šnode_cache,node_global
+	2.æ‰“å¼€cmdï¼Œæ‰§è¡Œä»¥ä¸‹è¯­å¥npm config set prefix "C:\Program Files\nodejs\node_globalï¼ˆnode_globalçš„ç›®å½•ï¼‰(è¿™ä¸ªç›®å½•å¯ä»¥å…ˆä¸åˆ›å»º)"
+			       npm config set cache "C:\Program Files\nodejs\node_cacheï¼ˆnode_cacheçš„ç›®å½•ï¼‰"
+	3.åœ¨ç³»ç»Ÿå˜é‡ä¸‹å’Œç”¨æˆ·å˜é‡ä¸‹æ–°å»º"NODE_PATH"ï¼Œè¾“å…¥â€C:\Program Files\nodejs\node_global\node_modulesï¼ˆnode_globalçš„ç›®å½•ï¼‰"
+	
+	4.åœ¨ç¯å¢ƒå˜é‡ä¸­é…ç½®C:\Program Files\nodejs\node_global
+4.ä¸‹è½½webstorm(ç•¥);	
 
