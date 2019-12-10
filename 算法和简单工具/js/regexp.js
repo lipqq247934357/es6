@@ -1,4 +1,5 @@
-let a = `                <li>
+let a = `  
+                <li>
                     <span>渠道</span>
                     <span>{{info.channelName}}</span>
                 </li>
