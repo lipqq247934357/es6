@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="test1.css" rel="stylesheet" type="text/css"/>
+    <style>
+        div {
+            background: red;
+            width: 100px;
+            height: 100px;
+        }
+
+
+        .div1 {
+            overflow: hidden;
+            margin-top: 200px;
+        }
+
+        .div2 {
+            position: absolute;
+            top: 101px;
+            left: 200px;
+            width: 100%;
+            background: blue;
+        }
+
+        .div3 {
+            position: absolute;
+            left: 200px;
+            top: 101px;
+            width: 100%;
+            background: green;
+        }
+        .div4 {
+            position: relative;
+            left: 200px;
+            top: 202px;
+            width: 100%;
+            background: yellow;
+        }
+
+
+    </style>
+</head>
+<body>
+<div>
+    <div class="div1">
+        <div class="div2">
+            <div class="div3">
+                aaaaa
+                aaaaaaaaaaaaaaaaaaaaa
+            </div>
+            <div class="div4">
+            bbbbbbbbbbbbbbbbbbbbbbbbbb
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+data.channelNo = data.data.prodData[0].BATCHDATE;
+data.prodNo = data.data.prodData[0].BATCHSTATE;
+data.prodName = data.data.prodData[0].CHANNELNO;
+data.fileType = data.data.prodData[0].CREATETIME;
+data.prodDesc = data.data.prodData[0].FILETYPE;
+data.isSubmitPCI = data.data.prodData[0].INPUTUSER;
+data.useYn = data.data.prodData[0].PRODDESC;
+data.userInfo.username = data.data.prodData[0].PRODNAME;
+data.guarFeeRate = data.data.prodData[0].PRODNO;
+data.startDate = data.data.prodData[0].ROW_ID;
+data.endDat = data.data.prodData[0].UPDATETIME; = data.data.prodData[0].USEYN;
+
+                    channelNo:  form.channelNo,
+                    prodNo:     form.prodNo,
+                    prodName:   form.prodName,
+                    fileType:   form.fileType,
+                    prodDesc:   form.prodDesc,
+                    isSubmitPCI:form.isSubmitPCI,
+                    useYn:      form.useYn,
+                    updateUser: this.userInfo.username,
+                    guarFeeRate:form.guarFeeRate,
+                    startDate:  form.startDate,
+                    endDate:    form.endDate

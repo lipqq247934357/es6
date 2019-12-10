@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="test1.css" rel="stylesheet" type="text/css" />
+    <style>
+        div {
+            width: 30%;
+            height: 30px;
+            background-color: red;
+            margin-left: 50px;
+            float: left;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+
+    window.name = 'world';
+
+    function haha() {
+        console.log(this);
+        let obj = {
+            name: 'hello',
+            alias: this.name,
+            getInfo: function () {
+                console.log(this.name);
+                console.log(this.alias);
+            },
+            agetInfo: () => {
+                console.log(this.name);
+                console.log(this.alias);
+            }
+        };
+
+        obj.getInfo();
+        obj.agetInfo();
+    }
+
+    haha();
+
+</script>
+</body>
+</html>
