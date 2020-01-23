@@ -4,8 +4,7 @@ let obj = [1, 2, 3]
 
 for (const i of obj) {
     console.log(i);
-}
-;
+};
 
 /**
  *

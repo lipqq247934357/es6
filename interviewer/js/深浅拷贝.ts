@@ -1,5 +1,20 @@
+/**
+ * 浅拷贝
+ * 1.assign
+ * 2.扩展运算符
+ */
+
+let obj2 = {a:1,b:2};
+let obj3 = {...obj2};
+console.log(obj3);
+
+let arr2 = [1,2];
+let arr3 = [...arr2];
+console.log(arr3);
+
+
 /***
- * 深度遍历
+ * 深拷贝
  *
  *  思路：
  *      如果是基本类型，就直接赋值，否则

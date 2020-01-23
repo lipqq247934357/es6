@@ -1,6 +1,9 @@
-let a = (dd) => {
-    console.log(dd);
+let b = 'aaa';
+
+let a = (d) => {
+    let b = 111;
+    console.log(this.b);
+    console.log(this);
 }
 
 a(111);
-
