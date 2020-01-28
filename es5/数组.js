@@ -36,7 +36,6 @@ console.log(arr2.slice(0));
 console.log(arr3.slice(0, 4));
 
 // reduce
-
 let arr5 = [1, 2, 3, 4, 5, 6, 7];
 console.log(arr5.reduce((before, curr) => {
     return before + curr;
