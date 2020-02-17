@@ -67,3 +67,38 @@ MyPromise.prototype.then = function (onFulfilled, onRejected) {
         onRejected(that.value)
     }
 };
+
+/**
+ * promise.all原理
+ *  利用闭包函数存储promise的length，
+ *      每次执行成功了，then方法中将promise存储起来，然后当存储的promise结果和请求的数量一致的时候返回promise
+ */
+
+/**
+ * Promise.all Promise进行并行处理
+ * 参数: promise对象组成的数组作为参数
+ * 返回值: 返回一个Promise实例
+ * 当这个数组里的所有promise对象全部变为resolve状态的时候，才会resolve。
+ */
+Promise.all = function (promises) {
+    return new Promise((resolve, reject) => {
+        let done = gen(promises.length, resolve);
+        promises.forEach((promise, index) => {
+            promise.then((value) => {
+                done(index, value)
+            }, reject)
+        })
+    })
+}
+
+function gen(length, resolve) {
+    let count = 0;
+    let values = [];
+    return function (i, value) {
+        values[i] = value;
+        if (++count === length) {
+            console.log(values);
+            resolve(values);
+        }
+    }
+}

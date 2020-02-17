@@ -7,7 +7,6 @@
  */
 
 var inherit = (function (c, p) {
-    //
     var F = function () {
     };
     return function (c, p) {

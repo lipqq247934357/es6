@@ -1,4 +1,4 @@
-let pro = require('./promise');
+let pro = require('./Promise');
 
 let a = new pro((resolve, reject) => {
     setTimeout(() => resolve(2), 400, 'done');
