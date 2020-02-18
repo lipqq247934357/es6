@@ -15,11 +15,9 @@ class EventEmitter {
         }
     }
 
-
     off(eventName = '') {
         if (eventName && this.event[eventName]) {
             this.event[eventName] = [];
         }
     }
-
 }
