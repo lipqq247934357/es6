@@ -21,42 +21,6 @@ setTimeout(function () {
 
 
 
-
-/**
- * 解析 url 同时返回一个方法，如果找不到这个字符串，返回undefined，如果是一个，返回true，有多个返回数组
- * @param url
- */
-function urlParse(url) {
-    let obj = {};
-    let reg = /[?&][^?&]+=[^?&]+/g;
-    let arr = url.match(reg);
-    if (arr) {
-        arr.forEach(function (item) {
-            item = item.substring(1).split('=');
-            let key = decodeURIComponent(item[0]);
-            let value = decodeURIComponent(item[1]);
-            if (!obj[key]) {
-                obj[key] = value;
-            } else {
-                if (Array.isArray(obj[key])) {
-                    obj[key].push(value);
-                } else {
-                    obj[key] = [obj[key], value];
-                }
-            }
-        });
-    }
-    return function (key) {
-        return obj[key];
-    }
-}
-
-var getPara = urlParse('https://twotiger.com/aa?name=100&age=200&aa=300&aa=400&aa=500');
-console.log(getPara('name'));
-console.log(getPara('aa'));
-console.log(getPara('bb'));
-
-
 //冒泡排序   1.首先是让相邻的项进行比较，每次比较最后一个肯定是最大或者最小值，然后比较剩下的数字，将第二小或者第二大的放到倒数第二位置
 (function (arr) {
     let len = arr.length;
@@ -123,7 +87,7 @@ console.log(getPara('bb'));
         return Math.random() - 0.5;
     });
 }
-())
+());
 
 
 // 将多维数组转化为一维数组  有好多种方法，这个我觉得挺好的
@@ -141,5 +105,40 @@ function parse(arr) {
     return arr2;
 }
 
-console.log(parse(arr))
+console.log(parse(arr));
+
+
+/**
+ * 解析 url 同时返回一个方法，如果找不到这个字符串，返回undefined，如果是一个，返回true，有多个返回数组
+ * @param url
+ */
+function urlParse(url) {
+    let obj = {};
+    let reg = /[?&][^?&]+=[^?&]+/g;
+    let arr = url.match(reg);
+    if (arr) {
+        arr.forEach(function (item) {
+            item = item.substring(1).split('=');
+            let key = decodeURIComponent(item[0]);
+            let value = decodeURIComponent(item[1]);
+            if (!obj[key]) {
+                obj[key] = value;
+            } else {
+                if (Array.isArray(obj[key])) {
+                    obj[key].push(value);
+                } else {
+                    obj[key] = [obj[key], value];
+                }
+            }
+        });
+    }
+    return function (key) {
+        return obj[key];
+    }
+}
+
+var getPara = urlParse('https://twotiger.com/aa?name=100&age=200&aa=300&aa=400&aa=500');
+console.log(getPara('name'));
+console.log(getPara('aa'));
+console.log(getPara('bb'));
 
