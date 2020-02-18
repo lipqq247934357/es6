@@ -1,4 +1,8 @@
-
+/**
+ *
+ * 函数可以访问所在作用域内的变量
+ *
+ */
 function aa(){
     let a = 10;
     function b(){
