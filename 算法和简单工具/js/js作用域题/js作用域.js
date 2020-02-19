@@ -1,7 +1,7 @@
-window.a = 200
+window.a = 200;
 
 function func () {
-    let a = 300
+    let a = 300;
     let obj = {
         a: 11,
         b: function () {
