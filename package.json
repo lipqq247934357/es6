@@ -1,0 +1,23 @@
+{
+  "name": "es6",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/lipqq247934357/es6/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "index.js",
+  "type": "moudle",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lipqq247934357/es6.git"
+  },
+  "keywords": [
+    "est"
+  ],
+  "author": "lipeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lipqq247934357/es6/issues"
+  },
+  "homepage": "https://github.com/lipqq247934357/es6#readme"
+}

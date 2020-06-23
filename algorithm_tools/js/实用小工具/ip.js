@@ -17,3 +17,4 @@ var getIp=function(){
 }
 
 console.log(`http://${getIp()}:8080/index.html?#/`);
+console.log(`http://${getIp()}:8080/index.html#/login`);
