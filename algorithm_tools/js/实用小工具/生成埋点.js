@@ -1,9 +1,5 @@
-import {generatorConfig,generatorClickReport} from '../utils';
+let utils = require('../utils');
 /**
- *
- * 约定：
- *  第一行是code
- *  第二行是注释
  *
  * @type {string}
  */
@@ -36,78 +32,35 @@ let correctBox =
     批改详情页-学生提交列表-已订正
     5201599574468608`;
 
+correctBox = correctBox.split('\n');
+let code = utils.getArrByIndex(correctBox, 2, 1); 
+let name = utils.getArrByIndex(correctBox, 2, 0);
 
-let obj1 = {
-    CORRECT_TOOL_PENCIL: '4828529123878912', // 批改工具-铅笔
-    CORRECT_TOOL_CHECKMARK: '4828532229629952', // 批改工具-对号
-    CORRECT_TOOL_ARROW: '4828536652589056', // 批改工具-箭头
-    CORRECT_TOOL_LINE: '4828538287974400', // 批改工具-直线
-    CORRECT_TOOL_TEXT: '4828534820268032', // 批改工具-文本
-    CORRECT_TOOL_WAVE_LINE: '4828540186159104', // 批改工具-波浪线
-    CORRECT_TOOL_RECTANGLE: '4828541683066880', // 批改工具-矩形
-    CORRECT_TOOL_TRIANGLE: '4828543337719808', // 批改工具-三角形
-    CORRECT_TOOL_ROUND: '4828544711616512', // 批改工具-圆形
-    CORRECT_TOOL_EXPRESSION: '4828546168875008', // 批改工具-表情
-    CORRECT_TOOL_PIC: '4828547780470784', // 批改工具-图片
-    CORRECT_TOOL_MOVE: '828549102266368', // 批改工具-移动
-    CORRECT_TOOL_RUBBER: '828550293121024', // 批改工具-橡皮
-    CORRECT_TOOL_SCREENSHOT: '828551549184000', // 批改工具-截图
+for(let i=0;i<code.length;i++) {
+    console.log(`aa:${code[i]}, //${name[i]}`);
+}
+
+let data = {
+    CLAZZLIST_FILTER_OVER:'5201383607199744', // 课节列表页-班级筛选-已结束 点击
+    CLAZZLIST_FILTER_NOT_START:'5201379097602048', // 课节列表页-班级筛选-未开始 点击
+    CLAZZLIST_FILTER_PROCESS:'5201376575383552', // 课节列表页-班级筛选-行课中 点击
+    CLAZZLIST_FILTER_ALL:'5201374192101376', // 课节列表页-班级筛选-全部 点击
+    CLOUD_CORRECT_SORT_CONFIRM:'5201488630016000', // 个人云批改排序-确认保存排序的次数
+    CORRECT_PENCEL_10:'5201583228676096', // 10号铅笔点击
+    CORRECT_PENCEL_12:'5201584438994944', // 12号铅笔点击
+    CORRECT_PENCEL_14:'5201585427736576', // 14号铅笔点击
+    CORRECT_PENCEL_18:'5201586448001024', // 18号铅笔点击
+    CORRECT_LIST_ALL:'5201595464640512', // 批改详情页-学生提交列表-全部
+    CORRECT_LIST_WAIT_CORRECT:'5201596709627904', // 批改详情页-学生提交列表-待批改
+    CORRECT_LIST_WAIT_UPDATE:'5201598511409152', // 批改详情页-学生提交列表-待订正
+    CORRECT_LIST_HAVE_UPDATE:'5201599574468608', // 批改详情页-学生提交列表-已订正
 };
 
-
-/**
- *
- * 可以在这里替换correctBox的内容，如果只是使用一次的话
- * correctBox =
- *      `4828021684791296
- *      批改详情-图片放大拖拽-前端调用底层接口次数`;
- *
- * 第二个参数表示生成的名字的前缀
- */
-
-correctBox =
-    `4827902577108992
-“获取权限并添加习题”按钮点击次数
-4827924225026048
-获取布置权限二次确认弹窗-确认 点击次数
-4827928513570816
-获取布置权限二次确认弹窗-取消 点击次数
-4827935901313024
-“布置权限转让”按钮点击次数
-4827944538040320
-“布置权限转让”弹窗-确认 点击次数
-4827947796490240
-“布置权限转让”弹窗-取消 点击次数
-4827969227614208
-“查看练习”按钮点击次数`;
-
-// 生成config内容
-let {arrVal} = generatorConfig(correctBox, 'CORRECT_TOOL_');
-/**
- *
- * 还可以对返回值进行操作
- */
-
-/**
- *
- * 可以在这里替换obj1的内容，如果只使用一次的话
- * obj:{
- *      key: NO, // 注释
- * }
- *
- * v-:表示自定义指令使用
- * 不写表示代码中使用
- */
-
-
-obj1 = {
-    GET_PERMISSION: '4827902577108992', // “获取权限并添加习题”按钮点击次数
-    GET_PERMISSION_CONFIRM: '4827924225026048', // 获取布置权限二次确认弹窗-确认 点击次数
-    GET_PERMISSION_CANCEL: '4827928513570816', // 获取布置权限二次确认弹窗-取消 点击次数
-    PERMISSION_TRANSFER: '4827935901313024', // “布置权限转让”按钮点击次数
-    PERMISSION_TRANSFER_CONFIRM: '4827944538040320', // “布置权限转让”弹窗-确认 点击次数
-    PERMISSION_TRANSFER_CANCEL: '4827947796490240', // “布置权限转让”弹窗-取消 点击次数
-    PERMISSION_SHOW_PR: '4827969227614208', // “查看练习”按钮点击次数
-};
-
-generatorClickReport(obj1, 'v-c');
+for(let name in data) {
+    let temp1 = `v-clickReport="$Api.POINT.${name}"`;
+    let temp2 = `this.$clickReport({ event_id: this.$Api.POINT.${name} });`;
+    console.log(temp1);
+    setTimeout(()=>{
+        console.log(temp2);
+    });
+}

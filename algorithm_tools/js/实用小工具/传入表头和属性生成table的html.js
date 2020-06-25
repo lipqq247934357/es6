@@ -12,7 +12,7 @@ prop = prop.split('\n'); // 字段数组
 let title = [ // title数组
     '借据号',
     '渠道名称',
-    '产品名称',];
+    '产品名称'];
 
 function genrator(title, prop) {
     function template(title, prop) {
