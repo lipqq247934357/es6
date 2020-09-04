@@ -13,6 +13,7 @@
   "author": "lipeng",
   "license": "ISC",
   "dependencies": {
+    "dayjs": "^1.8.32",
     "lodash": "^4.17.15"
   },
   "keywords": [

@@ -1,9 +1,8 @@
-var getIp=function(){
-    var os=require('os'),
-         ipStr,
-        infaces=os.networkInterfaces(),
-         bool=false;
-    for(var i in infaces){
+const getIp = function(){
+    let ipStr = '';
+    const infaces=require('os').networkInterfaces();
+    let bool=false;
+    for(let i in infaces) {
         infaces[i].some(function(x){
             if((x.family=='IPv4')&&(x.internal == false)){
                 ipStr=x.address;
@@ -13,7 +12,7 @@ var getIp=function(){
         })
         if(bool){break}
     }
-    return ipStr
+    return ipStr;
 }
 
 console.log(`http://${getIp()}:8080/index.html?#/`);

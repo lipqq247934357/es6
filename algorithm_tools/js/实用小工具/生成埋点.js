@@ -4,56 +4,32 @@ let utils = require('../utils');
  * @type {string}
  */
 
-let correctBox =
-    `课节列表页-班级筛选-已结束 点击
-    5201383607199744
-    课节列表页-班级筛选-未开始 点击
-    5201379097602048
-    课节列表页-班级筛选-行课中 点击
-    5201376575383552
-    课节列表页-班级筛选-全部 点击
-    5201374192101376
-    个人云批改排序-确认保存排序的次数
-    5201488630016000
-    10号铅笔点击
-    5201583228676096
-    12号铅笔点击
-    5201584438994944
-    14号铅笔点击
-    5201585427736576
-    18号铅笔点击
-    5201586448001024
-    批改详情页-学生提交列表-全部
-    5201595464640512
-    批改详情页-学生提交列表-待批改
-    5201596709627904
-    批改详情页-学生提交列表-待订正
-    5201598511409152
-    批改详情页-学生提交列表-已订正
-    5201599574468608`;
+// let correctBox =
+//     `批改系统-课节列表-每日一练-查看按钮点击
+//     点击
+//     5361526545672192
+//     班级ID、辅导老师ID
+//     每日一练日期列表-提交人数点击
+//     点击
+//     5361538239129600
+//     班级ID、辅导老师ID
+//     每日一练日期列表-查看详情点击
+//     点击
+//     5361535664744448
+//     班级ID、辅导老师ID`;
 
-correctBox = correctBox.split('\n');
-let code = utils.getArrByIndex(correctBox, 2, 1); 
-let name = utils.getArrByIndex(correctBox, 2, 0);
+// correctBox = correctBox.split('\n');
+// let code = utils.getArrByIndex(correctBox, 4, 2); 
+// let name = utils.getArrByIndex(correctBox, 4, 0);
 
-for(let i=0;i<code.length;i++) {
-    console.log(`aa:${code[i]}, //${name[i]}`);
-}
+// for(let i=0;i<code.length;i++) {
+//     console.log(`aa:${code[i]}, //${name[i]}`);
+// }
 
 let data = {
-    CLAZZLIST_FILTER_OVER:'5201383607199744', // 课节列表页-班级筛选-已结束 点击
-    CLAZZLIST_FILTER_NOT_START:'5201379097602048', // 课节列表页-班级筛选-未开始 点击
-    CLAZZLIST_FILTER_PROCESS:'5201376575383552', // 课节列表页-班级筛选-行课中 点击
-    CLAZZLIST_FILTER_ALL:'5201374192101376', // 课节列表页-班级筛选-全部 点击
-    CLOUD_CORRECT_SORT_CONFIRM:'5201488630016000', // 个人云批改排序-确认保存排序的次数
-    CORRECT_PENCEL_10:'5201583228676096', // 10号铅笔点击
-    CORRECT_PENCEL_12:'5201584438994944', // 12号铅笔点击
-    CORRECT_PENCEL_14:'5201585427736576', // 14号铅笔点击
-    CORRECT_PENCEL_18:'5201586448001024', // 18号铅笔点击
-    CORRECT_LIST_ALL:'5201595464640512', // 批改详情页-学生提交列表-全部
-    CORRECT_LIST_WAIT_CORRECT:'5201596709627904', // 批改详情页-学生提交列表-待批改
-    CORRECT_LIST_WAIT_UPDATE:'5201598511409152', // 批改详情页-学生提交列表-待订正
-    CORRECT_LIST_HAVE_UPDATE:'5201599574468608', // 批改详情页-学生提交列表-已订正
+    DAILY_PRACTICE: 5361526545672192, // 批改系统-课节列表-每日一练-查看按钮点击
+    DAILY_PRACTICE_SUBMIT_COUNT: 5361538239129600, // 每日一练日期列表-提交人数点击
+    DAILY_PRACTICE_DETAIL: 5361535664744448, // 每日一练日期列表-查看详情点击
 };
 
 for(let name in data) {
