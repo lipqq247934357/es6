@@ -1,0 +1,53 @@
+[{
+    "pager": null,
+    "id": 0,
+    "templateId": 30416,
+    "name": null,
+    "description": null,
+    "origin": null,
+    "tag": "",
+    "gateway": 0,
+    "content": "家长您好，您在高途课堂邀请有礼中兑换了礼品，为确保您能收到礼品，请点击链接 {{url}}  进入“我的礼品”填写和确认收货地址，我们将在活动结束后7个工作日内为您发货",
+    "createdAt": null,
+    "vars": null,
+    "tagId": 0
+}, {
+    "pager": null,
+    "id": 0,
+    "templateId": 30410,
+    "name": null,
+    "description": null,
+    "origin": null,
+    "tag": "",
+    "gateway": 0,
+    "content": "途途送您大礼包啦！高途课堂邀请有礼活动新鲜出炉，只需邀请好友报名9元特训班，就能免费领取错题打印机、拍立得等奖品，还等什么？快来关注「高途课堂精选课」微信号：{{wechatNumber}} 参与活动吧~",
+    "createdAt": null,
+    "vars": null,
+    "tagId": 0
+}, {
+    "pager": null,
+    "id": 0,
+    "templateId": 30352,
+    "name": null,
+    "description": null,
+    "origin": null,
+    "tag": "",
+    "gateway": 0,
+    "content": "您已成功报名《{{title}}》，首次开课时间为：{{beginTime}}，请添加辅导老师{{counselorName}}的微信 {{wechatNo}} 。",
+    "createdAt": null,
+    "vars": null,
+    "tagId": 0
+}, {
+    "pager": null,
+    "id": 0,
+    "templateId": 30122,
+    "name": null,
+    "description": null,
+    "origin": null,
+    "tag": "",
+    "gateway": 0,
+    "content": "您已成功报名《{{title}}》，首次开课时间为：{{beginTime}}，辅导老师将在开课前3天与您联系。点击 {{url}} 下载高途课堂APP，登录查看课程信息",
+    "createdAt": null,
+    "vars": null,
+    "tagId": 0
+}]

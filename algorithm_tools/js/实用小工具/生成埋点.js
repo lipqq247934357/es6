@@ -4,39 +4,79 @@ let utils = require('../utils');
  * @type {string}
  */
 
-// let correctBox =
-//     `批改系统-课节列表-每日一练-查看按钮点击
-//     点击
-//     5361526545672192
-//     班级ID、辅导老师ID
-//     每日一练日期列表-提交人数点击
-//     点击
-//     5361538239129600
-//     班级ID、辅导老师ID
-//     每日一练日期列表-查看详情点击
-//     点击
-//     5361535664744448
-//     班级ID、辅导老师ID`;
+let correctBox =
+    `6097532288591899
+    课中-学情信息
+    6097532288591900
+    课中-购课信息
+    6097532288591901
+    课中-购课信息-课程类型-正价课
+    6097532288591902
+    课中-购课信息-课程类型-克瑞斯
+    6097532288591903
+    课中-购课信息-课程类型-入口班
+    6097532288591904
+    课中-购课信息-课程类型-公开课
+    6097532288591905
+    课中-购课信息-课程状态-待付款
+    6097532288591906
+    课中-购课信息-课程状态-已付款
+    6097532288591907
+    课中-购课信息-课程状态-已取消
+    6097532288591908
+    课中-购课信息-课程状态-已退款
+    6097532288591909
+    课中-便签条
+    6097532288591882
+    课中-搜索框-搜索点击
+    6097532288526380
+    课中-查看结课报告
+    6097532288526381
+    课中-查看课节报告
+    6097532288526384
+    课中-预报名筛选
+    6097532288591872
+    课中-预报名筛选-已预报名
+    6097532288591873
+    课中-预报名筛选-未预报名
+    6097532288591874
+    课中-意向筛选
+    6097532288591875
+    课中-意向筛选-高意向
+    6097532288591876
+    课中-意向筛选-低意向
+    6097532288591877
+    课中-意向筛选-无意向
+    6097532288591878
+    课中-创建订单
+    6097532288591879
+    课中-筛选点击
+    6097532288591880
+    课中-筛选点击-确定
+    6097532288591881
+    课中-发短信-发送`;
 
-// correctBox = correctBox.split('\n');
-// let code = utils.getArrByIndex(correctBox, 4, 2); 
-// let name = utils.getArrByIndex(correctBox, 4, 0);
+correctBox = correctBox.split('\n');
+let code = utils.getArrByIndex(correctBox, 2, 0); 
+let name = utils.getArrByIndex(correctBox, 2, 1);
 
-// for(let i=0;i<code.length;i++) {
-//     console.log(`aa:${code[i]}, //${name[i]}`);
-// }
-
-let data = {
-    DAILY_PRACTICE: 5361526545672192, // 批改系统-课节列表-每日一练-查看按钮点击
-    DAILY_PRACTICE_SUBMIT_COUNT: 5361538239129600, // 每日一练日期列表-提交人数点击
-    DAILY_PRACTICE_DETAIL: 5361535664744448, // 每日一练日期列表-查看详情点击
-};
-
-for(let name in data) {
-    let temp1 = `v-clickReport="$Api.POINT.${name}"`;
-    let temp2 = `this.$clickReport({ event_id: this.$Api.POINT.${name} });`;
-    console.log(temp1);
-    setTimeout(()=>{
-        console.log(temp2);
-    });
+for(let i=0;i<code.length;i++) {
+    console.log(`aa:${code[i]}, //${name[i]}`);
 }
+
+
+
+// let data = {
+//     DAILY_PRACTICE: 5361526545672192, // 批改系统-课节列表-每日一练-查看按钮点击
+//     DAILY_PRACTICE_SUBMIT_COUNT: 5361538239129600, // 每日一练日期列表-提交人数点击
+//     DAILY_PRACTICE_DETAIL: 5361535664744448, // 每日一练日期列表-查看详情点击
+// };
+
+// for(let name in data) {
+//     let temp1 = `v-clickReport="$Api.POINT.${name}"`;
+//     let temp2 = `this.$clickReport({ event_id: this.$Api.POINT.${name} });`;
+//     console.log(temp1);
+//     setTimeout(()=>{
+//         console.log(temp2);
+//     });
+// }

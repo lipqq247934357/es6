@@ -1,0 +1,88 @@
+{
+    "type": "object",
+    "properties": {
+        "code": {
+            "type": "integer",
+            "format": "int32"
+        },
+        "data": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "operateType": {
+                        "type": "string",
+                        "description": "操作类型"
+                    },
+                    "operateSubType": {
+                        "type": "string",
+                        "description": "操作子类型"
+                    },
+                    "operateObjectId": {
+                        "type": "string",
+                        "description": "操作对象Id"
+                    },
+                    "operateDetail": {
+                        "type": "string",
+                        "description": "操作详情"
+                    },
+                    "operatorName": {
+                        "type": "string",
+                        "description": "操作人姓名"
+                    },
+                    "operatorUserId": {
+                        "type": "string",
+                        "description": "操作人用户Id"
+                    },
+                    "operateTerminal": {
+                        "type": "string",
+                        "description": "操作终端"
+                    },
+                    "operateTime": {
+                        "type": "string",
+                        "description": "操作时间"
+                    }
+                },
+                "title": "商品列表返回对象",
+                "$$ref": "#/definitions/商品列表返回对象",
+                "required": ["operateType", "operateSubType", "operateObjectId", "operateDetail", "operatorName", "operatorUserId", "operateTerminal", "operateTime"]
+            }
+        },
+        "errorTypeCode": {
+            "type": "integer",
+            "format": "int32"
+        },
+        "msg": {
+            "type": "string"
+        },
+        "pager": {
+            "type": "object",
+            "required": ["count", "pageNum", "pageSize"],
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 100,
+                    "description": "总数"
+                },
+                "pageNum": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1,
+                    "description": "当前页码"
+                },
+                "pageSize": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 50,
+                    "description": "分页大小"
+                }
+            },
+            "title": "Pager",
+            "$$ref": "#/definitions/Pager"
+        }
+    },
+    "title": "RestResponse«Collection«商品列表返回对象»»",
+    "$$ref": "#/definitions/RestResponse«Collection«商品列表返回对象»»",
+    "required": ["code", "data", "errorTypeCode", "msg", "pager"]
+}

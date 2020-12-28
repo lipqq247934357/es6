@@ -1,0 +1,20 @@
+[{
+    "firstAmendTime": 0,
+    "firstSubmitTime": 0,
+    "homeworkRecordId": 10766369,
+    "homeworkStatus": 10,
+    "latestSubmitTime": 0,
+    "rightCount": 0,
+    "score": -1,
+    "student": {
+        "displayName": "",
+        "mobile": "12000200028",
+        "realName": "",
+        "studentAvatar": "",
+        "userId": 1436923,
+        "userStatus": 0
+    },
+    "studentNumber": 36311,
+    "version": 1,
+    "wrongCount": 0
+}]
