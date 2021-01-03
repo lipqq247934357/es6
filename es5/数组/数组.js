@@ -2,6 +2,9 @@ let arr = [1, 2, 3, 4, 5, 6];
 // 查询arr3
 console.log(arr[3]);
 
+console.log(Array.isArray(arr));
+console.log(Object.prototype.toString.call(arr));
+
 //查找
 console.log(arr.indexOf(11));
 
