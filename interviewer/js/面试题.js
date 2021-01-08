@@ -2,6 +2,7 @@
  * 如何实现
  *      let p = new Person(); //  p :{id:1}
  *      let p2 = new Person(); //  p :{id:2}
+ *      let p3 = new Person(); //  p :{id:3}
  *
  * 还有两种解法：
  *      1.使用原型链
@@ -12,7 +13,7 @@ let Person = (function () {
     let id = 0;
     return function () {
         id++;
-        return {id: id}
+        return {id}
     }
 })();
 
