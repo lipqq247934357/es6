@@ -31,6 +31,8 @@ function resolvePromise(promise2, x, resolve, reject) {
                 },err => {
                     reject(err);
                 });
+            } else {
+                resolve(x);
             }
         } catch (e) {
             reject(e);
