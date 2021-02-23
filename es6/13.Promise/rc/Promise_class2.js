@@ -22,13 +22,13 @@ function resolvePromise(promise2, x, resolve, reject) {
     if (promise2 === x) { //循环引用,不能自己等待自己完成
         return reject('TypeError');
     }
-    if (x !== null && (typeof x === 'object' || typeof x === 'funcion')) {
+    if (x !== null && (typeof x === 'object' || typeof x === 'funcion')) { // 上个promise的返回值如果是对象或者function
         try { // 兼容取then的时候报错
             let then = x.then;
             if(typeof then === 'function') {
-                then.call(x,y => {
+                x.then(y => {
                     resolvePromise(promise2,y,resolve,reject); // 如果promise返回值仍然是promise
-                },err => {
+                }, err => {
                     reject(err);
                 });
             } else {
