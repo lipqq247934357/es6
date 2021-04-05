@@ -52,7 +52,20 @@ function getProp(data, prop, val, needVal) {
     }
 }
 
-let a = getProp(data, 'code', '2',['code','codeName']);
+let a = getProp(data, 'code', '2', ['code', 'codeName']);
 console.log(a);
 
-// 资产交易平台有使用
+// 数组项是对象的时候给数组去重
+function mergeData(list) {
+    const obj = {};
+    list = list.reduce((prev, item) => {
+        const { id } = item;
+        obj[id] ? "" : (obj[id] = true && prev.push(item));
+        return prev;
+    }, [])
+    return list;
+}
+
+const list = [{ id: 1, name: 1 }, { id: 2, name: 2 }, { id: 3, name: 3 }, { id: 1, name: 1 }];
+
+console.log(mergeData(list));
