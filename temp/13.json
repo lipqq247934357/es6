@@ -1,0 +1,199 @@
+{
+    "timestamp": "2021-03-29 13:34:45",
+    "failCode": "in occaecat pariatur",
+    "failMsg": "veniam do laboris sed",
+    "code": "SUCCESS",
+    "msg": "succ",
+    "data": {
+      "priceList": [
+        {
+          "id": 1,
+          "name": "0元课"
+        },
+        {
+          "id": 2,
+          "name": "非0元"
+        }
+      ],
+      "subjectList": [
+        {
+          "id": 1,
+          "name": "数学"
+        },
+        {
+          "id": 2,
+          "name": "语文"
+        },
+        {
+          "id": 3,
+          "name": "英语"
+        }
+      ],
+      "gradeList": [
+        {
+          "id": 3,
+          "name": "三年级"
+        },
+        {
+          "id": 4,
+          "name": "四年级"
+        },
+        {
+          "id": 5,
+          "name": "五年级"
+        },
+        {
+          "id": 6,
+          "name": "六年级"
+        },
+        {
+          "id": 7,
+          "name": "初一"
+        }
+      ],
+      "courseTypeList": [
+        {
+          "id": 2,
+          "name": "系统班"
+        },
+        {
+          "id": 5,
+          "name": "爆品课"
+        }
+      ],
+      "taskTypeList": [
+        {
+          "id": 1,
+          "name": "人工任务"
+        },
+        {
+          "id": 2,
+          "name": "消息提醒"
+        }
+      ],
+      "userTypeList": [
+        {
+          "id": 1,
+          "name": "全部用户"
+        },
+        {
+          "id": 2,
+          "name": "细分用户"
+        }
+      ],
+      "reminderTime": {
+        "ARTIFICAL_REMINDER_TIME": [
+          {
+            "id": 1,
+            "name": "无需提醒"
+          },
+          {
+            "id": 2,
+            "name": "到时提醒"
+          },
+          {
+            "id": 3,
+            "name": "开始前15分钟"
+          },
+          {
+            "id": 4,
+            "name": "开始前30分钟"
+          },
+          {
+            "id": 5,
+            "name": "开始前45分钟"
+          },
+          {
+            "id": 6,
+            "name": "开始前1小时"
+          }
+        ],
+        "AUTO_REMINDER_TIME": [
+          {
+            "id": 1,
+            "name": "无需提醒"
+          },
+          {
+            "id": 2,
+            "name": "到时提醒"
+          },
+          {
+            "id": 3,
+            "name": "结束前15分钟"
+          },
+          {
+            "id": 4,
+            "name": "结束前30分钟"
+          },
+          {
+            "id": 5,
+            "name": "结束前45分钟"
+          },
+          {
+            "id": 6,
+            "name": "结束前1小时"
+          },
+          {
+            "id": 7,
+            "name": "结束后每30分钟循环"
+          },
+          {
+            "id": 8,
+            "name": "结束后每1小时循环"
+          }
+        ]
+      },
+      "finishStandard": {
+        "FINISH_STANDARD5": [
+          {
+            "id": 10,
+            "name": "完成微信绑定"
+          }
+        ],
+        "FINISH_STANDARD3": [
+          {
+            "id": 8,
+            "name": "多个学员小灶课开课到课"
+          }
+        ],
+        "FINISH_STANDARD4": [
+          {
+            "id": 9,
+            "name": "仅1个学员小灶课开课到课"
+          }
+        ],
+        "FINISH_STANDARD1": [
+          {
+            "id": 1,
+            "name": "接通"
+          },
+          {
+            "id": 2,
+            "name": "未接通1次"
+          },
+          {
+            "id": 3,
+            "name": "未接通2次"
+          },
+          {
+            "id": 4,
+            "name": "未接通3次"
+          },
+          {
+            "id": 5,
+            "name": "未接通4次"
+          },
+          {
+            "id": 6,
+            "name": "未接通5次"
+          }
+        ],
+        "FINISH_STANDARD2": [
+          {
+            "id": 7,
+            "name": "勾选即完成"
+          }
+        ]
+      }
+    }
+  }

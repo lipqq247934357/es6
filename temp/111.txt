@@ -1,1 +1,14 @@
-啊啊啊啊阿道夫稍等发多少
+{
+    id: 51,
+    systemId: 6,
+    parentId: 22,
+    title: "小灶课",
+    name: "SmallKitchenClass",
+    component: "",
+    icon: "",
+    type: 2,
+    link: "",
+    sort: 0,
+    children: [],
+    permissions: []
+},

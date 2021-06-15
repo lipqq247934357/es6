@@ -1,53 +1,942 @@
-[{
-    "pager": null,
-    "id": 0,
-    "templateId": 30416,
-    "name": null,
-    "description": null,
-    "origin": null,
-    "tag": "",
-    "gateway": 0,
-    "content": "家长您好，您在高途课堂邀请有礼中兑换了礼品，为确保您能收到礼品，请点击链接 {{url}}  进入“我的礼品”填写和确认收货地址，我们将在活动结束后7个工作日内为您发货",
-    "createdAt": null,
-    "vars": null,
-    "tagId": 0
-}, {
-    "pager": null,
-    "id": 0,
-    "templateId": 30410,
-    "name": null,
-    "description": null,
-    "origin": null,
-    "tag": "",
-    "gateway": 0,
-    "content": "途途送您大礼包啦！高途课堂邀请有礼活动新鲜出炉，只需邀请好友报名9元特训班，就能免费领取错题打印机、拍立得等奖品，还等什么？快来关注「高途课堂精选课」微信号：{{wechatNumber}} 参与活动吧~",
-    "createdAt": null,
-    "vars": null,
-    "tagId": 0
-}, {
-    "pager": null,
-    "id": 0,
-    "templateId": 30352,
-    "name": null,
-    "description": null,
-    "origin": null,
-    "tag": "",
-    "gateway": 0,
-    "content": "您已成功报名《{{title}}》，首次开课时间为：{{beginTime}}，请添加辅导老师{{counselorName}}的微信 {{wechatNo}} 。",
-    "createdAt": null,
-    "vars": null,
-    "tagId": 0
-}, {
-    "pager": null,
-    "id": 0,
-    "templateId": 30122,
-    "name": null,
-    "description": null,
-    "origin": null,
-    "tag": "",
-    "gateway": 0,
-    "content": "您已成功报名《{{title}}》，首次开课时间为：{{beginTime}}，辅导老师将在开课前3天与您联系。点击 {{url}} 下载高途课堂APP，登录查看课程信息",
-    "createdAt": null,
-    "vars": null,
-    "tagId": 0
-}]
+{
+  "data": {
+    "id": -12,
+    "addedValue": "",
+    "childNode": [
+      {
+        "id": 175,
+        "enumKey": 1,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "首触跟进",
+        "childNode": [
+          {
+            "id": 207,
+            "enumKey": 1,
+            "parentId": 175,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务",
+            "childNode": [
+              {
+                "id": 274,
+                "enumKey": 1,
+                "parentId": 207,
+                "type": "TASK_TIME",
+                "addedValue": "1",
+                "enumValue": "学员进班时",
+                "childNode": [
+                  {
+                    "id": 281,
+                    "enumKey": 16,
+                    "parentId": 274,
+                    "type": "TASK_TIME",
+                    "addedValue": "2",
+                    "enumValue": "固定时间1"
+                  }
+                ]
+              },
+              {
+                "id": 275,
+                "enumKey": 2,
+                "parentId": 207,
+                "type": "TASK_TIME",
+                "addedValue": "1",
+                "enumValue": "学员进班后",
+                "childNode": [
+                  {
+                    "id": 282,
+                    "enumKey": 16,
+                    "parentId": 275,
+                    "type": "TASK_TIME",
+                    "addedValue": "1",
+                    "enumValue": "固定时间1",
+                    "childNode": [
+                      {
+                        "id": 283,
+                        "enumKey": 4,
+                        "parentId": 282,
+                        "type": "TASK_TIME",
+                        "addedValue": "2",
+                        "enumValue": "第一讲",
+                        "childNode": [
+                          {
+                            "id": 284,
+                            "enumKey": 18,
+                            "parentId": 283,
+                            "type": "TASK_TIME",
+                            "addedValue": "2",
+                            "enumValue": "开始"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 290,
+                "enumKey": 1,
+                "parentId": 207,
+                "type": "TASK_FORM",
+                "addedValue": "",
+                "enumValue": "外呼",
+                "childNode": [
+                  {
+                    "id": 292,
+                    "enumKey": 1,
+                    "parentId": 290,
+                    "type": "FINISHI_STANDARD",
+                    "addedValue": "FINISH_STANDARD1",
+                    "enumValue": "外呼完成标准"
+                  }
+                ]
+              },
+              {
+                "id": 291,
+                "enumKey": 1,
+                "parentId": 207,
+                "type": "REMIND_TIME",
+                "addedValue": "ARTIFICAL_REMINDER_TIME",
+                "enumValue": "提醒时间"
+              }
+            ]
+          },
+          {
+            "id": 208,
+            "enumKey": 2,
+            "parentId": 175,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒",
+            "childNode": [
+              {
+                "id": 276,
+                "enumKey": 3,
+                "parentId": 208,
+                "type": "TASK_TIME",
+                "addedValue": "1",
+                "enumValue": "微信绑定后",
+                "childNode": [
+                  {
+                    "id": 285,
+                    "enumKey": 16,
+                    "parentId": 276,
+                    "type": "TASK_TIME",
+                    "addedValue": "1",
+                    "enumValue": "固定时间1"
+                  }
+                ]
+              },
+              {
+                "id": 293,
+                "enumKey": 6,
+                "parentId": 208,
+                "type": "TASK_FORM",
+                "addedValue": "",
+                "enumValue": "企微私信"
+              },
+              {
+                "id": 294,
+                "enumKey": 1,
+                "parentId": 208,
+                "type": "IS_REPLY",
+                "addedValue": "",
+                "enumValue": "是否回复"
+              },
+              {
+                "id": 295,
+                "enumKey": 2,
+                "parentId": 208,
+                "type": "REMIND_TIME",
+                "addedValue": "AUTO_REMINDER_TIME",
+                "enumValue": "提醒时间"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 176,
+        "enumKey": 2,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "加微绑定",
+        "childNode": [
+          {
+            "id": 209,
+            "enumKey": 1,
+            "parentId": 176,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务",
+            "childNode": [
+              {
+                "id": 277,
+                "enumKey": 1,
+                "parentId": 209,
+                "type": "TASK_TIME",
+                "addedValue": "1",
+                "enumValue": "学员进班时",
+                "childNode": [
+                  {
+                    "id": 286,
+                    "enumKey": 16,
+                    "parentId": 277,
+                    "type": "TASK_TIME",
+                    "addedValue": "2",
+                    "enumValue": "固定时间1"
+                  }
+                ]
+              },
+              {
+                "id": 278,
+                "enumKey": 4,
+                "parentId": 209,
+                "type": "TASK_TIME",
+                "addedValue": "1",
+                "enumValue": "第一讲",
+                "childNode": [
+                  {
+                    "id": 287,
+                    "enumKey": 18,
+                    "parentId": 278,
+                    "type": "TASK_TIME",
+                    "addedValue": "1",
+                    "enumValue": "开始",
+                    "childNode": [
+                      {
+                        "id": 288,
+                        "enumKey": 16,
+                        "parentId": 287,
+                        "type": "TASK_TIME",
+                        "addedValue": "2",
+                        "enumValue": "固定时间1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 296,
+                "enumKey": 10,
+                "parentId": 209,
+                "type": "TASK_FORM",
+                "addedValue": "FINISH_STANDARD5",
+                "enumValue": "微信绑定",
+                "childNode": [
+                  {
+                    "id": 298,
+                    "enumKey": 5,
+                    "parentId": 296,
+                    "type": "FINISHI_STANDARD",
+                    "addedValue": "FINISH_STANDARD5",
+                    "enumValue": "微信绑定完成标准"
+                  }
+                ]
+              },
+              {
+                "id": 297,
+                "enumKey": 2,
+                "parentId": 209,
+                "type": "REMIND_TIME",
+                "addedValue": "ARTIFICAL_REMINDER_TIME",
+                "enumValue": "提醒时间"
+              },
+              {
+                "id": 302,
+                "enumKey": 6,
+                "parentId": 209,
+                "type": "TASK_FORM",
+                "addedValue": "",
+                "enumValue": "企微私信"
+              },
+              {
+                "id": 303,
+                "enumKey": 7,
+                "parentId": 209,
+                "type": "TASK_FORM",
+                "addedValue": "",
+                "enumValue": "企微群发"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 177,
+        "enumKey": 3,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "摸底测提醒",
+        "childNode": [
+          {
+            "id": 210,
+            "enumKey": 2,
+            "parentId": 177,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒",
+            "childNode": [
+              {
+                "id": 279,
+                "enumKey": 3,
+                "parentId": 210,
+                "type": "TASK_TIME",
+                "addedValue": "1",
+                "enumValue": "微信绑定后",
+                "childNode": [
+                  {
+                    "id": 299,
+                    "enumKey": 16,
+                    "parentId": 279,
+                    "type": "TASK_TIME",
+                    "addedValue": "1",
+                    "enumValue": "固定时间1"
+                  }
+                ]
+              },
+              {
+                "id": 280,
+                "enumKey": 4,
+                "parentId": 210,
+                "type": "TASK_TIME",
+                "addedValue": "1",
+                "enumValue": "第一讲",
+                "childNode": [
+                  {
+                    "id": 300,
+                    "enumKey": 18,
+                    "parentId": 280,
+                    "type": "TASK_TIME",
+                    "addedValue": "1",
+                    "enumValue": "开始",
+                    "childNode": [
+                      {
+                        "id": 301,
+                        "enumKey": 16,
+                        "parentId": 300,
+                        "type": "TASK_TIME",
+                        "addedValue": "1",
+                        "enumValue": "固定时间1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 304,
+                "enumKey": 6,
+                "parentId": 210,
+                "type": "TASK_FORM",
+                "addedValue": "",
+                "enumValue": "企微私信"
+              },
+              {
+                "id": 305,
+                "enumKey": 7,
+                "parentId": 210,
+                "type": "TASK_FORM",
+                "addedValue": "",
+                "enumValue": "企微群发"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 178,
+        "enumKey": 4,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "打卡提醒",
+        "childNode": [
+          {
+            "id": 211,
+            "enumKey": 2,
+            "parentId": 178,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 179,
+        "enumKey": 5,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "1对1电教",
+        "childNode": [
+          {
+            "id": 212,
+            "enumKey": 1,
+            "parentId": 179,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          }
+        ]
+      },
+      {
+        "id": 180,
+        "enumKey": 6,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "1对1电教邀约",
+        "childNode": [
+          {
+            "id": 213,
+            "enumKey": 1,
+            "parentId": 180,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          },
+          {
+            "id": 214,
+            "enumKey": 2,
+            "parentId": 180,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 181,
+        "enumKey": 7,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "1对1电教提醒到课",
+        "childNode": [
+          {
+            "id": 215,
+            "enumKey": 1,
+            "parentId": 181,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          },
+          {
+            "id": 216,
+            "enumKey": 2,
+            "parentId": 181,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 182,
+        "enumKey": 8,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "小灶课备课",
+        "childNode": [
+          {
+            "id": 217,
+            "enumKey": 1,
+            "parentId": 182,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          }
+        ]
+      },
+      {
+        "id": 183,
+        "enumKey": 9,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "小灶课(多人)",
+        "childNode": [
+          {
+            "id": 218,
+            "enumKey": 1,
+            "parentId": 183,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          }
+        ]
+      },
+      {
+        "id": 184,
+        "enumKey": 10,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "小灶课(多人)邀约",
+        "childNode": [
+          {
+            "id": 236,
+            "enumKey": 2,
+            "parentId": 184,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 185,
+        "enumKey": 11,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "小灶课(多人)提醒到课",
+        "childNode": [
+          {
+            "id": 226,
+            "enumKey": 1,
+            "parentId": 185,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          },
+          {
+            "id": 227,
+            "enumKey": 2,
+            "parentId": 185,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 186,
+        "enumKey": 12,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "自我介绍",
+        "childNode": [
+          {
+            "id": 219,
+            "enumKey": 1,
+            "parentId": 186,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          }
+        ]
+      },
+      {
+        "id": 187,
+        "enumKey": 13,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "发送群公告",
+        "childNode": [
+          {
+            "id": 220,
+            "enumKey": 1,
+            "parentId": 187,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          }
+        ]
+      },
+      {
+        "id": 188,
+        "enumKey": 14,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "发送学习资料",
+        "childNode": [
+          {
+            "id": 237,
+            "enumKey": 2,
+            "parentId": 188,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 189,
+        "enumKey": 15,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "发送朋友圈",
+        "childNode": [
+          {
+            "id": 221,
+            "enumKey": 1,
+            "parentId": 189,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          }
+        ]
+      },
+      {
+        "id": 190,
+        "enumKey": 16,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "开营通知",
+        "childNode": [
+          {
+            "id": 238,
+            "enumKey": 2,
+            "parentId": 190,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 191,
+        "enumKey": 17,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "开营仪式",
+        "childNode": [
+          {
+            "id": 222,
+            "enumKey": 1,
+            "parentId": 191,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          }
+        ]
+      },
+      {
+        "id": 192,
+        "enumKey": 18,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "邀请晒笔记",
+        "childNode": [
+          {
+            "id": 239,
+            "enumKey": 2,
+            "parentId": 192,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 193,
+        "enumKey": 19,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "班级课堂表现",
+        "childNode": [
+          {
+            "id": 240,
+            "enumKey": 2,
+            "parentId": 193,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 194,
+        "enumKey": 20,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "正课备课",
+        "childNode": [
+          {
+            "id": 223,
+            "enumKey": 1,
+            "parentId": 194,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          }
+        ]
+      },
+      {
+        "id": 195,
+        "enumKey": 21,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "课程安排",
+        "childNode": [
+          {
+            "id": 241,
+            "enumKey": 2,
+            "parentId": 195,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 196,
+        "enumKey": 22,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "到课邀约",
+        "childNode": [
+          {
+            "id": 242,
+            "enumKey": 2,
+            "parentId": 196,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 197,
+        "enumKey": 23,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "提醒到课",
+        "childNode": [
+          {
+            "id": 228,
+            "enumKey": 1,
+            "parentId": 197,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          },
+          {
+            "id": 229,
+            "enumKey": 2,
+            "parentId": 197,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 198,
+        "enumKey": 24,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "课后回访",
+        "childNode": [
+          {
+            "id": 230,
+            "enumKey": 1,
+            "parentId": 198,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          },
+          {
+            "id": 231,
+            "enumKey": 2,
+            "parentId": 198,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 199,
+        "enumKey": 25,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "提醒回放",
+        "childNode": [
+          {
+            "id": 232,
+            "enumKey": 1,
+            "parentId": 199,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          },
+          {
+            "id": 233,
+            "enumKey": 2,
+            "parentId": 199,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 200,
+        "enumKey": 26,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "布置作业",
+        "childNode": [
+          {
+            "id": 243,
+            "enumKey": 2,
+            "parentId": 200,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 201,
+        "enumKey": 27,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "收作业",
+        "childNode": [
+          {
+            "id": 244,
+            "enumKey": 2,
+            "parentId": 201,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 202,
+        "enumKey": 28,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "提醒订正",
+        "childNode": [
+          {
+            "id": 245,
+            "enumKey": 2,
+            "parentId": 202,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 203,
+        "enumKey": 29,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "学情反馈",
+        "childNode": [
+          {
+            "id": 234,
+            "enumKey": 1,
+            "parentId": 203,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          },
+          {
+            "id": 235,
+            "enumKey": 2,
+            "parentId": 203,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 204,
+        "enumKey": 30,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "续报跟进",
+        "childNode": [
+          {
+            "id": 224,
+            "enumKey": 1,
+            "parentId": 204,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          }
+        ]
+      },
+      {
+        "id": 205,
+        "enumKey": 31,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "优惠提醒",
+        "childNode": [
+          {
+            "id": 246,
+            "enumKey": 2,
+            "parentId": 205,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "消息提醒"
+          }
+        ]
+      },
+      {
+        "id": 206,
+        "enumKey": 32,
+        "parentId": -12,
+        "type": "SOP_NODE",
+        "addedValue": "",
+        "enumValue": "退费跟进",
+        "childNode": [
+          {
+            "id": 225,
+            "enumKey": 1,
+            "parentId": 206,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          },
+          {
+            "id": 247,
+            "enumKey": 1,
+            "parentId": 206,
+            "type": "TASK_TYPE",
+            "addedValue": "",
+            "enumValue": "人工任务"
+          }
+        ]
+      }
+    ]
+  },
+  "timestamp": "2021-04-27 18:17:46",
+  "code": "SUCCESS",
+  "msg": "成功",
+  "success": true
+}
