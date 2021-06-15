@@ -8,10 +8,13 @@ function timeout(ms) {
         setTimeout(() => resolve(10), ms, 'done');
     })
 }
+for (let i = 0; i < 10; i++) {
 
-timeout(1000).then((value) => {
-    console.log(value);
-});
+    console.log('1111');
+    timeout(1000).then((value) => {
+        console.log(value);
+    });
+}
 
 timeout(1000).then((value) => {
     console.log(value);
@@ -19,3 +22,12 @@ timeout(1000).then((value) => {
     console.log(value);
 });
 
+const taskEffect = async (task) => {
+    console.log('2222');
+    await Promise.resolve().then(() => {
+        console.log('2.5555');
+    });
+    console.log('33333');
+}
+
+taskEffect();
