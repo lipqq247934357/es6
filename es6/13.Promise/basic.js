@@ -22,7 +22,8 @@ timeout(1000).then((value) => {
     console.log(value);
 });
 
-const taskEffect = async (task) => {
+
+const func1 = async (task) => {
     console.log('2222');
     await Promise.resolve().then(() => {
         console.log('2.5555');
@@ -30,4 +31,13 @@ const taskEffect = async (task) => {
     console.log('33333');
 }
 
-taskEffect();
+{
+    func1();
+}
+
+
+Promise.resolve("22").then(() => {
+    console.log('111');
+}).then(() => {
+    console.log('val', 111);
+});
