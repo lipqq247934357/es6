@@ -5,7 +5,7 @@
  */
 
 
- export function countDown(endDate, func, trigger): any {
+ export function countDown(endDate, func, trigger) {
     let timer;
     function animation() {
         const now = dayjs();
@@ -41,7 +41,7 @@
     return animation;
 }
 
-export function positiveTime(startDate, func, trigger): any {
+export function positiveTime(startDate, func, trigger) {
     let timer;
     function animation() {
         const now = dayjs();
