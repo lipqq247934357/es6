@@ -2,7 +2,7 @@
  *  将元素分为m组,获取每组中第n个元素（n从0开始）
  */
 
-function getArrByIndex(arr, m, n) {
+ export const getArrByIndex = function(arr, m, n) {
     return arr.filter((item,index)=> index % m === n);
 }
 
@@ -12,7 +12,7 @@ function getArrByIndex(arr, m, n) {
  * @returns {{}}
  */
 
-function urlController(url) {
+export const urlController = function(url) {
     let _url = url.split("?")[1];
     if (!_url) {
         return {};
@@ -32,6 +32,4 @@ function urlController(url) {
 function ArrayToObject(arr1,arr2) {
     
 }
-
-module.exports =  {getArrByIndex, urlController};
 
