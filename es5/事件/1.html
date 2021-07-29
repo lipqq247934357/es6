@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .edit-span {
+            display: inline-block;
+            min-width: 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>  
+    <input type="text" id="input1" />
+    <br/>
+    <span id="span1" contenteditable="true" class="edit-span"></span>
+</body>
+    <script>
+        const item = document.querySelector("#input1");
+        item.addEventListener("paste",  (e) => {
+            let paste = (event.clipboardData || window.clipboardData).getData('text');
+            console.log(paste);
+	    });
+
+        const span1 = document.querySelector("#span1");
+        span1.addEventListener("paste",  (e) => {
+            let paste = (event.clipboardData || window.clipboardData).getData('text');
+            console.log(paste);
+	    });
+        span1.addEventListener("blur",  (e) => {
+            console.log(e);
+            console.log(e.target.innerText);
+	    });
+    </script>
+</html>
