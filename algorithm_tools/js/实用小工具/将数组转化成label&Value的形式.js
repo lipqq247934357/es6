@@ -19,7 +19,7 @@ let temp = [];
 arr.forEach((item, index) => {
   temp.push({
     label: item,
-    id: index,
+    value: index,
   });
 });
 console.log("JSON.stringify(temp)", JSON.stringify(temp));
