@@ -1,5 +1,5 @@
 function errorObj() {
-    throw 2;
+    throw {name:'111', content:'22'};
 }
 
 try {
