@@ -1,13 +1,14 @@
+// Proxy 实际上重载（overload）了点运算符，即用自己的定义覆盖了语言的原始定义
 var obj = new Proxy({}, {
-    get(target, key, receiver) {
-        console.log(`get ${key} ${receiver}!`);
-        return Reflect.get(target, key, receiver)
+    get: function (target, propKey, receiver) {
+        console.log(`getting ${propKey}!`);
+        return Reflect.get(target, propKey, receiver);
     },
-    set(target, key, value, receiver) {
-        console.log(`set ${key} ${value} ${receiver}!`);
-        return Reflect.set(target, key, value, receiver)
+    set: function (target, propKey, value, receiver) {
+        console.log(`setting ${propKey}!`);
+        return Reflect.set(target, propKey, value, receiver);
     }
 });
 
-obj.count = 1;
-++obj.count;
+obj.count = 1
+++obj.count
