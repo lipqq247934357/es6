@@ -12,7 +12,8 @@ function aa(){
         }
         return c;
     }
-    return b();
+    return b;
 }
 let bb = aa();
-bb();
+let cc = bb();
+cc();
