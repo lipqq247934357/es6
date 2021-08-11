@@ -7,6 +7,8 @@ for (let i of s) {
 }
 console.log(new Set([12,23]));
 console.log(new Set('1234222224567'));
+// has 运算符
+console.log(s.has(2));
 // 2.去除重复的数组和字符串
 console.log([...new Set([1,2,3,4,5,2,3])]);
 console.log([...new Set('1234564223459')].join(''));
