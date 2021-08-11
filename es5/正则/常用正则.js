@@ -1,6 +1,4 @@
-// class属性
-let regex = /class="[^/"]*"/g;
-// id属性
-let regex2 = /id="[^/"]*"/g;
+// id或者class属性
+let regex = /(class|id)="[^/"]*"/g;
 // 注释
-let regex3 = /<!--(.|[\r\n])*?-->/g;
+let regex2 = /<!--(.|[\r\n])*?-->/g;

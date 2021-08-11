@@ -1,5 +1,4 @@
 // 1.最简单的函数柯里化
-
 // 普通的add函数
 function add(x, y) {
     return x + y
