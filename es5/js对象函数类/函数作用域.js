@@ -3,11 +3,11 @@
  * 函数可以访问其声明所在作用域内的变量
  *
  */
-function aa(){
+function aa() {
     let a = 10;
-    function b(){
+    function b() {
         console.log(a);
-        function c(){
+        function c() {
             console.log(a);
         }
         return c;

@@ -16,13 +16,17 @@ let tuple: [string, number] = ['1', 2];
 let add = (x: number, y: number) => x + y
 let compute:(x:number,y:number) => number
 compute = (a,b) =>a+b
+// 函数返回值设置
+const a = (): Number => {
+    return 1;
+}
 
 // 对象
 let obj: {x:number,y:string} = {x:1,y:'22'};
 obj.y = '2';
 
 // symbol
-let s1:symbol = Symbol();
+let s1 :symbol = Symbol();
 let s2 :symbol = Symbol();
 
 // undefined,null
