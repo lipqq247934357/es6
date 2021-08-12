@@ -1,6 +1,14 @@
 # 关于每个项目的介绍:
 ### es6
-    关于js，ts，node等语法问题
+
+    -algorithm_tools
+    -es5
+    -es6
+    -interviewer
+    -systemAlgorithms
+    -temp
+    -ts
+
 ### tts2.0:
     tts3: vue全家桶+ts的项目，主要还有很多h5&c3代码和语法
     actoss:一个使用vue全家桶+ts开发的后台管理系统
