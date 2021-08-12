@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "fs": "0.0.1-security",
-    "node-fetch": "^1.7.3",
+    "node-fetch": "^2.6.1",
     "thunkify": "^2.1.2"
   }
 }
