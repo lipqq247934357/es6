@@ -13,7 +13,7 @@
   "author": "lipeng",
   "license": "ISC",
   "dependencies": {
-    "dayjs": "^1.8.32",
+    "dayjs": "^1.10.6",
     "lodash": "^4.17.15",
     "moment": "^2.29.1"
   },
