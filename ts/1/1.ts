@@ -25,10 +25,6 @@ const a = (): Number => {
 let obj: {x:number,y:string} = {x:1,y:'22'};
 obj.y = '2';
 
-// symbol
-let s1 :symbol = Symbol();
-let s2 :symbol = Symbol();
-
 // undefined,null
 let un:undefined = undefined;
 let nu:null = null;
