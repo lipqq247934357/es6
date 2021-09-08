@@ -13,6 +13,7 @@
 5.es6 module  
     参考es6 module  
 6.webpack module  
-    1.webpack实现了一套方案可以兼容所有的目前存在的主流模块，可以实现模块之间的转换
-        注:不支持cmd（seajs）
+    1.webpack实现了一套方案可以兼容所有的目前存在的主流模块，可以实现模块之间的转换  
+        1.不支持cmd（seajs）  
+        2.将es6module代码转化成commonjs模块格式，但是功能按照es6 module原理实现  
     2.同时会使用动态import进行代码分割
