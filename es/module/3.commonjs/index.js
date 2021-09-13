@@ -9,4 +9,4 @@
 // 引入模块1
 const a = require('./m1.js');
 // 引入模块2
-const b = require('./m2.js');
+// const b = require('./m2.js');
