@@ -5,22 +5,22 @@ import { strToArr } from "../utils.js";
 
 /**
  * 
- * @param {*} title 标题
- * @param {*} prop 属性字符串
+ * @param {*} key1
+ * @param {*} key2
  * @returns 
  */
 
-function genrator(title, prop) {
-    const template = (title, prop) => {
+function genrator(key1, key2) {
+    const template = (key1, key2) => {
         return `
         <el-table-column
-           label="${title}"
-           prop="${prop}">
+           label="${key1}"
+           prop="${key2}">
         </el-table-column>`;
     }
     let strs = '';
-    for (let i = 0; i < title.length; i++) {
-        strs += template(title[i], prop[i]);
+    for (let i = 0; i < key1.length; i++) {
+        strs += template(key1[i], key2[i]);
     }
     console.log(strs);
     return strs;
