@@ -30,3 +30,11 @@ for (let item of arr) {
     let a = urlController(item);
     console.log(a);
 }
+
+// 可以使用 URLSearchParams 代替，性能可能更好
+
+const getParamsByKey = (key) => {
+    const search = window.location.href.split('?')[1];
+    const query = new URLSearchParams(search);
+    return query.get(key);
+}
