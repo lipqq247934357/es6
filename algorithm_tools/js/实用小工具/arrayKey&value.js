@@ -2,7 +2,6 @@ import { strToArr } from "../utils.js";
 /**
  * 将key,value形式，拼接成el-table的代码结构
  */
-
 /**
  * 
  * @param {*} key1
@@ -22,7 +21,6 @@ function genrator(key1, key2) {
     for (let i = 0; i < key1.length; i++) {
         strs += template(key1[i], key2[i]);
     }
-    console.log(strs);
     return strs;
 }
 
@@ -37,4 +35,5 @@ let title = [ // title数组
     '渠道名称',
     '产品名称'];
 
-genrator(title, prop);
+let strs = genrator(title, prop);
+console.log(strs);
