@@ -62,3 +62,9 @@ export const formatDuration4Min = function (duration) {
     let minutes = parseInt(duration / 60);
     return `${toTwoLen(minutes)}: ${toTwoLen(seconds)} `;
 };
+
+// basic
+
+export const strToArr = (str, splitSymbol) => {
+    return str.split(splitSymbol);
+}
