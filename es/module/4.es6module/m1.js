@@ -6,6 +6,7 @@ getAge();
 console.log("=====获取名字===");
 getName();
 setTimeout(() => {
+    console.log("====100ms之后====");
     console.log("====基本类型仍然会变====");
     console.log(a);
     console.log("========");
