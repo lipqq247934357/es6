@@ -15,7 +15,7 @@ setTimeout(() => {
     console.log("========");
     console.log("=====default获取更新后的名字,不会变===");
     getName();
-    console.log("=====获取年龄===");
+    console.log("=====export 基本导出 获取年龄，发生变化===");
     getAge();
 }, 100);
 
