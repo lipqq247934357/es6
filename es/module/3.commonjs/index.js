@@ -6,7 +6,5 @@
  * 3.是同步加载；
  * 4.支持动态加载（写到if 里面）
  */
-// 引入模块1
-const a = require('./m1.js');
-// 引入模块2
-// const b = require('./m2.js');
+
+require('./m1.js');
