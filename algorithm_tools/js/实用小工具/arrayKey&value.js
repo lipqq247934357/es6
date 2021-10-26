@@ -4,9 +4,9 @@ import { strToArr } from "../utils.js";
  */
 /**
  * 
- * @param {*} key1
- * @param {*} key2
- * @returns 
+ * @param {string|number} key1
+ * @param {string|number} key2
+ * @returns {string}
  */
 
 function genrator(key1, key2) {

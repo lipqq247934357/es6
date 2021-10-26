@@ -15,9 +15,7 @@ var a = 100;
 }
 console.log(b);
 
-
 console.log(c);
-
 
 var c = 100;
 console.log(c);
