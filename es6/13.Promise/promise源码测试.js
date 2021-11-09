@@ -1,22 +1,24 @@
-// let pro = require('./Promise');
-// let pro = require('./rc/Promise_class');
-const Promise = require('./rc/Promise_class2');
-let pro = require('./rc/Promise_class2');
+let MyPromise = require('./Promise');
 
-let a = new pro((resolve, reject) => {
-    setTimeout(() => resolve(2), 1400, 'done');
-});
+// Promise.then 接管模式
 
-a.then((value) => {
-    console.log(value);
-});
-
-a.then((value) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(200), 1400, 'xxxx');
+new MyPromise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(1);
+    }, 200);
+}).then(value => {
+    return new MyPromise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(1111);
+            resolve(new MyPromise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(1);
+                }, 200);
+            }).then(value => {
+                resolve(value * 2);
+            }))
+        }, 100);
     });
 }).then(value => {
     console.log(value);
 });
-
-

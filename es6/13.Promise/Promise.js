@@ -82,6 +82,7 @@ function resolvePromise(promise2, x, resolve, reject) {
     let called = false; // 避免多次调用
     // 如果x是一个promise对象 （该判断和下面 判断是不是thenable对象重复 所以可有可无）
     if (x instanceof Promise) { // 获得它的终值 继续resolve
+        console.log('xcxc');
         if (x.status === PENDING) { // 如果为等待态需等待直至 x 被执行或拒绝 并解析y值
             x.then(y => {
                 resolvePromise(promise2, y, resolve, reject);
