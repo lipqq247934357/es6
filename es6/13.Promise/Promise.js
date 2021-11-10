@@ -205,11 +205,20 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
     }
 };
 
+Promise.prototype.finally = function (callback) {
+    let P = this.constructor;
+    return this.then(
+      value  => P.resolve(callback()).then(() => value),
+      reason => P.resolve(callback()).then(() => { throw reason })
+    );
+  };
+
 /**
  * Promise.all Promise进行并行处理
  * 参数: promise对象组成的数组作为参数
  * 返回值: 返回一个Promise实例
- * 当这个数组里的所有promise对象全部变为resolve状态的时候，才会resolve。
+ * 当这个数组里的所有promise对象全部变为resolve状态的时候,执行resolve,返回数组
+ * 当有一个promise状态为reject的时候返回reject，参数为第一个reject的参数
  */
 Promise.all = function (promises) {
     return new Promise((resolve, reject) => {

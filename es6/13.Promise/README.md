@@ -26,3 +26,7 @@
     1.resolvePromise是对promise进行处理的函数
     2.主要是同步 返回值是Promise 的问题
     3.主要功能是将then的promise的resolve，reject的控制权交给返回值的Promise.then,包括数据和内容
+
+## Promise
+
+    1.Promise.prototype.catch = .then(null, rejection)
