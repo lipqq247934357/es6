@@ -12,5 +12,5 @@ var result = g.next();
 result.value.then(function(data){
     return data.json();
 }).then(function(data){
-    g.next(data);
+    // g.next(data);
 });
