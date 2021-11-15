@@ -1,4 +1,5 @@
 /**
+ * TODO: 现在都写hooks没有看
  * 1.所有属性默认都是public
  * 2.私有成员
  *      只能在类的本身调用，不能被实例调用，不能被子类调用
@@ -39,3 +40,22 @@ class Husky extends Dog {
     color: string;
 }
 
+
+
+/**
+ * 抽象类
+ */
+ abstract class Animal {
+    abstract eat(): void
+
+    drink(): string {
+        return '';
+    }
+}
+
+class tiger extends Animal {
+    eat(): void {
+    }
+}
+
+export default {};
