@@ -1,4 +1,5 @@
 // map 键值对的数据结构， 健可以是任意数据类型
+// set get has delete clear
 // 1.创建 map
 const m1 = new Map([[1,2]]);
 console.log(m1);

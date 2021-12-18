@@ -63,3 +63,49 @@ export const formatDuration4Min = function (duration) {
 export const strToArr = (str, splitSymbol) => {
     return str.split(splitSymbol);
 }
+
+/**
+ * 
+ * @param {array} arr 
+ * @param {array[number,number]} param1 
+ * @returns 
+ */
+
+export const turnArrayValue = (arr, [index1, index2]) => {
+    let temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+    return arr;
+}
+
+/**
+ * 
+ * 移动小数点位置
+ * 
+ * @param {string} str 
+ * @param {number} number 
+ * @returns 
+ */
+
+export const updatePointPosition = (str, number) => {
+    let arr = str.split("");
+    // 如果是整数，默认是没有'.'的，增加'.'
+    if (arr.indexOf(".") === -1) {
+        arr.push(".");
+    }
+
+    while (number > 0) {
+        // 没有0补0
+        if (arr.indexOf(".") === 0) {
+            arr.unshift("0");
+        }
+        let index = arr.indexOf(".");
+        arr = turnArrayValue(arr, [index, index - 1]);
+        number--;
+    }
+    // 如果最后'.'之前没有0，增加0
+    if (arr.indexOf(".") === 0) {
+        arr.unshift("0");
+    }
+    return arr.join("");
+};
