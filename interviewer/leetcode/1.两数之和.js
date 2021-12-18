@@ -12,7 +12,7 @@
  */
 var twoSum = function (nums, target) {
     const map = new Map();
-    for (let i = 0; i <= nums.length - 1; i++) {
+    for (let i = 0; i < nums.length; i++) {
         if (map.has(target - nums[i])) {
             return [i, map.get(target - nums[i])];
         }
@@ -32,3 +32,7 @@ var twoSum = function (nums, target) {
 //     }
 // };
 
+
+// @after-stub-for-debug-begin
+module.exports = twoSum;
+// @after-stub-for-debug-end
