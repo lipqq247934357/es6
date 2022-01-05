@@ -107,3 +107,50 @@ HTTP/1.1 200 OK
     4.明文
     5.不安全
     6.性能一般
+
+## 请求体
+
+    1.数据类型 
+        Accept: text/html,application/xml,image/webp,image/png
+        Content-Type: text/html  
+    2.编码
+        Accept-Encoding: gzip, deflate, br
+        Content-Encoding: gzip  
+    3.语言类型与编码
+        Accept-Language: zh-CN, zh, en
+        Content-Language: zh-CN
+        Accept-Charset: gbk, utf-8
+        Content-Type: text/html; charset=utf-8  
+    4.分块传输
+        ransfer-Encoding: chunked
+    5.长连接
+        connection: keep-alive
+    6.重定向
+        location: /index.html
+    7.Cookie
+        Cookie: 'uid=xxx'
+        Set-Cookie: 'uid=xxx'
+        Expires: xxx
+        Max-Age: xxx
+    8.缓存控制
+
+## 长短连接
+
+    1.短连接
+        HTTP 0.9/1.0的时候收到响应报文之后会立即关闭连接，所以称之为短连接，或者叫无连接
+    2.长连接
+        HTTP在一段时间内不关闭连接
+        HTTP 1.1默认开启长连接
+
+## 队头（首）阻塞
+
+    1.因为HTTP报文是“一发一收”的模式，这是个串行的队列，然后如果某一个卡住了，其他的都会被卡住
+    2.解决方案:并发连接&域名分片
+
+## Cookie
+
+    1.Cookie最好设置有效期
+    2.
+    3.身份识别，广告追踪
+
+## 缓存控制
