@@ -4,7 +4,7 @@
   "dependencies": {
     "co": "^4.6.0",
     "fs": "0.0.1-security",
-    "node-fetch": "^2.6.6",
+    "node-fetch": "^3.1.1",
     "thunkify": "^2.1.2"
   },
   "main": "1.基本使用.js",
