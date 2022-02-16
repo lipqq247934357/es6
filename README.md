@@ -33,8 +33,6 @@
     actoss:一个使用vue全家桶+ts开发的后台管理系统
 ### mf1:
     node相关项目
-### h5:
-    关于h5的东西，但是这个项目被合并到tts2.0了
 ### goldrent:
     以前做的一个vue项目，金融租赁管理系统
 ### assetTrade:
@@ -45,6 +43,8 @@
     vue源码相关
 ### webpack:
     webpack学习相关
+### h5:
+    关于h5的东西，但是这个项目被合并到tts2.0了
 ### helloWrold:
     一个java项目
 ### workLittleFunc:
