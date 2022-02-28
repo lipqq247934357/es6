@@ -7,3 +7,15 @@
 
 var v = 10;
 let a = 20;
+// 变量提升
+for (var i = 0; i < 4; i++) {
+    setTimeout(() => {
+        console.log('i', i);
+    });
+}
+
+for (let i = 0; i < 4; i++) {
+    setTimeout(() => {
+        console.log('i', i);
+    });
+}

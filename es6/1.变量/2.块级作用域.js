@@ -7,7 +7,7 @@ var tmp = new Date();
 
 function f() {
     console.log(tmp);
-    if (false) {
+    if (true) {
         var tmp = 'hello world';
     }
 }

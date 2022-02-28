@@ -27,7 +27,7 @@ console.log(t2.name) // 'undefined'
  * @param  {...any} args 
  * @returns 
  */
-const funcNew = (func, ...args) => {
+const newOperate = (func, ...args) => {
     let obj = {};
     obj.__proto__ = func.prototype;
     const result = func.apply(obj, args);
@@ -38,7 +38,7 @@ const Person = function () {
     this.name = 'aa';
 }
 Person.prototype.age = 28;
-const p = funcNew(Person);
+const p = newOperate(Person);
 console.log(p.name);
 console.log(p.age);
 
