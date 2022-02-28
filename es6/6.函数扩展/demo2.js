@@ -1,3 +1,4 @@
+// 参数的解构
 function add(...values) {
     let sum = 0;
 
