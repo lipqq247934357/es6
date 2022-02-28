@@ -15,10 +15,18 @@ const t2 = new Test2('yck')
 console.log(t2) // { age: 26 }
 console.log(t2.name) // 'undefined'
 // 实现new 运算符
-const Person = function () {
-    this.name = 'aa';
-}
-Person.prototype.age = 28;
+/**
+ * 	1.创建一个对象
+ *  2.将这个新对象的__proto__指向构造函数的prototype
+ * 	3.将构造函数的作用域指向这个对象，执行构造函数
+ *  4.如果结果返回值不是对象，返回初始创建的对象
+ */ 
+
+ /**
+ * @param {*} func 
+ * @param  {...any} args 
+ * @returns 
+ */
 const funcNew = (func, ...args) => {
     let obj = {};
     obj.__proto__ = func.prototype;
@@ -26,6 +34,10 @@ const funcNew = (func, ...args) => {
     return result instanceof Object ? result : obj;
 }
 
+const Person = function () {
+    this.name = 'aa';
+}
+Person.prototype.age = 28;
 const p = funcNew(Person);
 console.log(p.name);
 console.log(p.age);
