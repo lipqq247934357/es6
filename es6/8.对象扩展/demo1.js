@@ -5,7 +5,7 @@ let obj = {
     }
 };
 
-let name = 'name';
+let name = 'name1';
 
 let obj2 = {
     [name]: 'lipeng'

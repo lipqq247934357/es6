@@ -1,7 +1,7 @@
 /**
  一.Iterator遍历器的概念
     1.js集合的数据类型：
-    Array，Object,Map,Set
+    Array,Object,Map,Set
     2.Iterator:数据遍历的统一接口
     主要作用：1.提供一种统一的，简便的接口；
               2.使得数据接口能够按照某种次序排列
