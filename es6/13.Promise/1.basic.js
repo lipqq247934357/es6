@@ -8,13 +8,12 @@ function timeout(ms) {
         setTimeout(() => resolve(10), ms, 'done');
     })
 }
-for (let i = 0; i < 10; i++) {
 
-    console.log('1111');
-    timeout(1000).then((value) => {
-        console.log(value);
-    });
-}
+// 多少ms之后打印出来结果
+console.log('1111');
+timeout(1000).then((value) => {
+    console.log(value);
+});
 
 timeout(1000).then((value) => {
     console.log(value);
@@ -31,9 +30,7 @@ const func1 = async (task) => {
     console.log('33333');
 }
 
-{
-    func1();
-}
+func1();
 
 
 Promise.resolve("22").then(() => {
