@@ -19,7 +19,7 @@
         function (require, module, exports) {
             "use strict";
 
-            var _message = require("./message.js");
+            var _message = require("./message.js.js");
 
             var _message2 = _interopRequireDefault(_message);
 
@@ -38,7 +38,7 @@
                 value: true
             });
 
-            var _name = require("./name.js");
+            var _name = require("./name.js.js");
 
             exports.default = "hello " + _name.name + "!";
         },
