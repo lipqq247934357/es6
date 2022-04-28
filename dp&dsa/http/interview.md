@@ -111,7 +111,7 @@
 ## Cookie
 
     1.一般由服务器设置（set-cookie），浏览器存储（cookie），存储在浏览器，和浏览器绑定
-    1.cookie可以设置过期时间，Expires和Max-Age，同时出现优先使用Max-Age的值
+    1.cookie可以设置过期时间，Expires和Max-Age，同时出现优先使用Max-Age的值,单位秒
     3.Domain”和“Path”可以设置cookie所在的域名，一般path就是"/",但是可以区分不同环境
     4.HttpOnly:这个协议只能通过http协议传出，dom等无法操作这个cookie
     5.SameSite=Strict:可以严格限定 Cookie 不能随着跳转链接跨站发送
