@@ -16,6 +16,7 @@
 
     http://www.javascriptpeixun.cn/my/course/3002
     的运维模块
+    或者 http://www.javascriptpeixun.cn/my/course/2341 但是这个不全
 
 ## 测试地址
 
