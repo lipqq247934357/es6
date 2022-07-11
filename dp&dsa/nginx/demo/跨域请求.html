@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to ijiaoyan!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+    <div>ijiaoyan/1</div>
+    <script>
+
+        // 创建xhr对象 
+        var xhr = new XMLHttpRequest();
+
+        // 设置请求头
+        // 设置xhr请求的超时时间
+        xhr.timeout = 3000;
+        // 设置响应返回的数据格式
+        xhr.responseType = "text";
+
+        // 创建一个 post 请求
+        xhr.open('GET', 'http://cross.web.com');
+
+        // 注册相关事件回调处理函数
+        xhr.onload = function(e) { 
+        if(this.status == 200||this.status == 304){
+            console.log(this.responseText);
+        }
+        };
+        xhr.ontimeout = function(e) {
+            console.log("请求超时");
+        };
+
+        // 发送数据
+        xhr.send();
+
+    </script>
+</body>
+</html>
