@@ -1,0 +1,542 @@
+3.面试
+
+​	修改，上传简历 ✅
+
+​	切入点：从http开始复习
+
+​	制定面试计划
+
+​	执行面试计划
+
+
+1.复习vue源码 4天
+
+2.复习vue-router源码 2天
+
+3.复习vuex源码 2天
+
+4.看面试题 2天
+
+
+
+5.复习react面试题
+
+6.整理项目经验
+
+
+
+每天晚上面个试
+
+
+
+必问题：
+
+​	1.前端性能优化
+
+​	2.vue组件性能优化，react组件性能优化
+
+
+
+
+
+1.在公司使用node主要是做什么？
+
+​		1.node-pdf介绍
+
+​		2.node-mathjax介绍
+
+2.node问题
+
+​		1.cookie和session区别
+
+​		2.服务器直接清除cookie
+
+​				设置值为null，max-age=0
+
+​		3.node事件循环
+
+​		4.父进程和父进程死亡，对node有什么影响
+
+​		5.使用cluster做负载均衡
+
+3.react问题
+
+​		1.createElement，class，hooks有什么区别？分别适用于什么场景？
+
+​		2.组件里面如何处理请求？
+
+​		3.组件复用方式
+
+​		4.受控和非受控组件
+
+​		5.react性能优化
+
+4.vue问题
+
+​		1.vue组件通信方式
+
+​		2.vue双向数据绑定
+
+​		3.v-if，v-for哪个先执行
+
+​		4.vue事件修饰符
+
+​		5.vue和react相同点和不同点
+
+​		6.vue性能优化，写组件的经验和规范
+
+5.js基础
+
+​		1.普通函数和箭头函数的区别
+
+​		2.浏览器环境下的事件循环
+
+​		3.什么是宏任务，什么是微任务
+
+​		4.class super
+
+​		5.节流，防抖
+
+​		6.10px问题如何展示？
+
+​		7.展示0.5px的线
+
+​		8.前端性能优化
+
+
+
+
+
+1.react源码：
+
+react学习指南：https://juejin.cn/post/6844904205564526600
+
+
+
+
+
+算法：
+
+​https://juejin.cn/post/6968713283884974088
+
+https://github.com/BetaSu/fe-hunter
+
+
+
+vue react diff
+
+Vue:  比较前后vnode vue diff更灵活
+
+react: 比较fiber和jsx对象（数组）
+
+
+
+性能优化：
+
+1.遍历整棵树
+
+2.有一部分子树会跳过更新
+
+3.多层级透传
+
+​	redux
+
+4.
+
+
+
+react源码考察：
+
+​	1.直接问原理
+
+​	2.结合业务
+
+
+
+整体规划：
+
+​	1.5月之前搞定react源码
+
+​	2.5月之后复习ts
+
+​	3.复习公司项目
+
+
+
+在短暂的职场周期赚取更多的钱：
+
+​	1.一定是投入足够的学习，但是有足够的产出吗？
+
+​	2.较高的性价比
+
+​	3.努力也是不可放弃的
+
+互联网人：
+
+​	1.不要只把自己当程序员，是互联网人
+
+​	2.
+
+
+
+
+
+面试不一定问源码，你得知道哪些点可以和源码挂钩？
+
+比如：问hooks相关，我为什么这么做，如果面试官感兴趣，就可以说说源码
+
+
+
+
+
+业务流程：
+
+​	把整个流程弄通
+
+
+
+为什么废弃3个钩子函数？
+
+​	因为可中断机制
+
+redux执行原理？
+
+为什么技术输出？
+
+​	降低招人成本&降低了维护成本&提升了大家水平
+
+memo，useMemo，pureComponent，callback：
+
+​	memo，pureComponent：
+
+​		把bailout的比较改为浅比较，默认是深度比较的	浅比较也有性能开销
+
+​		组件本身开销非常大，使用优化策略
+
+​	useMemo，useCallback
+
+​	组件遇到了性能瓶颈再使用性能优化相关API，是有成本的
+
+​	参考资料：
+
+​		https://overreacted.io/before-you-memo/
+
+
+
+https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback
+
+
+
+需求评估：
+
+​	管理预期
+
+react 新的官方文档
+
+
+
+hooks源码相关：https://swr.vercel.app/zh-CN
+
+
+
+性能优化：
+
+1.将变与不变的内容分离
+
+​	变的内容：props,state,context
+
+2.当父组件满足性能优化的条件，它的子孙组件可能命中性能优化
+
+​	1.所有变的内容都不变了才可能性能优化
+
+
+
+props是否发生了变化：
+
+​	1.props是 {} !=={} 不相等，所以都不会命中性能优化API？
+
+​	2.useMemo 浅比较
+
+​	3.当父组件使用useMemo是浅比较，那它的子节点的props就不会发生变化（待定）
+
+
+
+1.学习react源码
+
+​	1.看视频，做笔记，看文档
+
+​	1.看下极客时间的视频（2小时）
+
+​			1.1学习官网知识（60）10:32开始 ✅
+
+​			1.2学习高阶组件（20）❗️
+
+​			1.3看极客时间视频-React基础（40）❗️
+
+​			1.4待定。。。(大意是总结，具体内容待定)❗️
+
+​			1.5react 事件机制源码❗️
+
+​				http://www.javascriptpeixun.cn/course/2218/task/202328/show
+
+
+
+安排5,6月：
+
+​		1.react
+
+​		2.redux
+
+​		3.微前端
+
+​		4.项目经验
+
+​		5.组件库：
+
+​			1.业务需求，组件库搭建
+
+
+
+vue和react区别：
+
+​	1.更新机制：
+
+​		vue使用object.defineProperty或者proxy，都是事件监听机制
+
+​		react使用主动调用机制，就那么几个方法可以触发更新，
+
+​	2.diff算法
+
+​		vue的diff可以被限制在被dep.notify，就是改变数据所在的组件，以及子组件范围内，属于局部diff
+
+​		react的diff是整体的diff，对于一些不变的组件，需要自己使用useMemo来优化效率
+
+https://juejin.cn/post/6981696220691431431
+
+https://www.bilibili.com/video/BV1iV411b7L1
+
+https://github.com/mqyqingfeng/Blog
+
+https://www.bilibili.com/video/BV1Tf4y1L7YH?p=2&spm_id_from=pageDriver
+
+https://juejin.cn/post/7053695602370019335
+
+
+
+
+
+周六：
+
+​	1.webpack原理学习
+
+​		3.1流程
+
+​		3.2loader,plugin
+
+​		3.3优化方案
+
+周日：
+
+​	1.vue的diff原理
+
+​		1.1从一个标签，状态发生变化，切换到另一个标签的逻辑
+
+​		1.2涉及子组件的情况
+
+
+
+
+
+单点登录
+
+适配
+
+ts泛型
+
+装饰器
+
+实现 new运算符
+
+ts
+
+
+
+面试复习文档：
+
+https://pomb.us/build-your-own-react/
+
+https://juejin.cn/post/6968713283884974088
+
+https://juejin.cn/post/6847009771355127822
+
+
+
+
+
+思想切片：
+
+定位：
+
+​	1.react技术栈掌握
+
+​		1.工程化
+
+​		2.微前端
+
+​		3.难度
+
+​	2.node技术栈掌握
+
+​		1.pm2的灵活使用
+
+​		2.日志工具
+
+​		3.使用脚本自动备份，部署和回滚
+
+​	3.vue可以独立开发
+
+​	4.阅读过webpack源码
+
+
+
+这周任务：
+
+​	1.复习完http相关内容
+
+​	2.准备深入学习react技术栈
+
+​		1.高阶组件
+
+​		2.redux原理
+
+​		3.hooks原理
+
+
+
+redux：
+
+​	存储权限
+
+
+
+1.redux原理
+
+/teaching/admins/api/course/basicData/subjectProductId=210 -> https://jzx.admin.aixuexi.com/
+
+
+
+以上内容闲的时候再看，一般总结业务经验就行
+
+
+
+1.背景图片设置
+
+2.react UseRef
+
+
+
+vuex,redux:
+
+​	1.存储基本数据，权限数据等基本数据
+
+​	2.存储很多组件都用到的业务数据
+
+
+
+上传图片逻辑
+
+
+
+1.顺序跳转逻辑梳理
+
+​	从第一步到第二步到第三步
+
+
+
+1.覆盖antd样式
+
+
+
+1.总结微前端的使用和原理
+
+2.总结一些基本方案
+
+3.总结一些业务场景
+
+4.总结代码搭建流程
+
+
+省市区级联实现：
+
+​	![image-20220611170347520](/Users/lipeng/Library/Application Support/typora-user-images/image-20220611170347520.png)
+
+
+redux学习：http://www.javascriptpeixun.cn/my/course/2620
+
+
+
+http://www.javascriptpeixun.cn/course/2620/task/304132/show
+
+http://www.javascriptpeixun.cn/course/2620/task/304436/show
+
+
+
+1.redux
+
+​	1.实现原理 ✅
+
+​	2.dva的实现原理
+
+​	3.知道+熟悉对应配套内容
+
+2.微前端
+
+3.webpack如何配置https
+
+4.nginx配置https
+
+5.总结样式和流程相关问题
+
+
+状态：
+
+​	1.有点瞌睡，感觉有点热
+
+​	2.想休息，玩游戏
+
+​	3.想游戏和游戏机快点回来
+
+​	4.其他事：看房子，让自己心烦的
+
+
+
+不知道怎么说，感觉所有的事情都这么现实：
+
+​	1.我活着
+
+​	2.活28
+
+​	3.我可能被裁
+
+​		3.1待着
+
+​		3.2裁了
+
+​	4.我可能需要多找机会
+
+突然想回家躺平了，每次租房，每次和中介battle，想到自己还奇葩的待着，想到自己连个家都没有
+
+
+
+
+
+重新审视这些东西：
+
+​	1.快30岁了，你有没有足够的东西呈现自己
+
+​	2.是不是因为自己身体和生活习惯的问题导致
+
+自己处于崩溃的边缘
+
+
+

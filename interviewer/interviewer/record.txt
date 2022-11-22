@@ -1,0 +1,56 @@
+概念：
+
+更新：
+
+​	在内存中生成workInProgress Fiber树和currentFiber树进行比较
+
+架构：
+
+1.深度优先遍历（深度优先遍历的后续遍历）
+
+2.beginWork
+​	HostComponent
+​		reconcileChildren
+​			ChildReconciler
+​				mountChildFilber
+​					createFilberFromElement
+
+创建当前fiber节点的第一个子节点
+
+3.completeWork（第一次）
+
+​	HostComponent
+​			没有current
+​				createInstance
+​					createElement
+​						dom节点设置属性
+
+​	根fiber节点执行
+​		reconcilerSingleElement
+​			placeSingleChild
+
+commit阶段：
+
+​	before mutation
+​		处理 focus，blur事件
+​		调用 getSnapshotBeforeUpdate 钩子函数
+​		useEffect回调函数放入回调函数
+
+​	mutation
+​		根据`effectTag`分别处理更新（Placement` | `Update` | `Deletion` | `Hydrating）
+​	layout
+​		commitLayoutEffectOnFiber
+​		赋值ref
+useMemo，useCallback
+
+优化白屏时间：
+
+​	1.预请求，预加载
+​	2.ssr ssg
+useMemo 优化子组件对比
+
+1.完成文件拷贝到nginx并且执行 ✅
+
+2.封装命令
+
+​	复制文件到nginx命令下
