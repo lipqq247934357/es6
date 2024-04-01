@@ -1,5 +1,5 @@
 /**
- * 将url的参数解析成key,val的形式
+ * 方案一：将url的参数解析成key,val的形式
  * @param url
  * @returns {{}}
  */
@@ -31,7 +31,7 @@ for (let item of arr) {
     console.log(a);
 }
 
-// 可以使用 URLSearchParams 代替，性能可能更好
+// 方案二：可以使用 URLSearchParams 代替，性能可能更好
 
 const getParamsByKey = (key) => {
     const search = window.location.href.split('?')[1];
