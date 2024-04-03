@@ -37,8 +37,9 @@ const arr = [{
     hour: 35
 }]
 
-const totalTime = arr.reduce((prev, item) => item.hour + prev, 0);
-console.log('全部时间', totalTime)
-console.log('按游玩时间排序', ([...arr]).sort((item1, item2) => item1.hour - item2.hour))
+// 需求：计算所有项目的时间总和
+console.log('全部时间', arr.reduce((prev, curr) => prev + curr.hour , 0))
+// 按照游玩时间进行排序
+console.log('按游玩时间排序升序', ([...arr]).sort((a, b) => a.hour - b.hour))
 
 
