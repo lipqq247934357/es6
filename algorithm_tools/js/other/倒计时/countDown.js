@@ -4,7 +4,6 @@
  *  实现原理：将后台的时间戳和截止的时间戳做差
  */
 
-
  export function countDown(endDate, func, trigger) {
     let timer;
     function animation() {
