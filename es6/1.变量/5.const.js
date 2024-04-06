@@ -15,7 +15,6 @@ const obj = {
 obj.age = 13;
 console.log(obj.age);
 
-
 /**
  *
  * 变量声明的6种方式：var ,function,let,const,class,import
