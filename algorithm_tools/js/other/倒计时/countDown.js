@@ -27,7 +27,6 @@ export function countDown(beginTime, getCurrentDay, func) {
             func({ countDownZero: _ms <= 0 });
         }
     }
-    return animation;
 }
 
 export function positiveTime(beginTime, getCurrentDay, func) {
@@ -45,7 +44,6 @@ export function positiveTime(beginTime, getCurrentDay, func) {
             }, timer)
         }
     }
-    return animation;
 }
 
 // 将时间转换成需要的形式,这个可以改成任意需要的格式
