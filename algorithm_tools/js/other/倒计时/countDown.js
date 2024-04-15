@@ -1,13 +1,19 @@
-/**
- * TODO: 倒计时组件
- * 倒计时：
- *  实现原理：将后台的时间戳和截止的时间戳做差
- */
+export const customTime = obj => { // 格式化输入的时间
+    let { HH, MM, SS } = obj;
+    HH = HH === '0' ? '' : HH + 'h';
+    if (MM.length !== 1 && MM.startsWith("0")) {
+        MM = MM.slice(1);
+    }
+    if (HH === '' && MM === '0') {
+        return `${SS}秒`
+    }
+    return `${HH} ${MM}min`;
+}
 
- export function countDown(endDate, func, trigger) {
+export function countDown(endDate, getCurrentDay, func) {
     let timer;
     function animation() {
-        const now = dayjs();
+        const now = getCurrentDay();
         const _ms = endDate.diff(now);
         if (_ms > 0) {
             let _hh = endDate.diff(now, 'hour');
@@ -31,19 +37,21 @@
                 HH,
                 MM,
                 SS,
-                MS
+                MS,
+                countDownZero: _ms <=0
             }, timer);
-        } else { // 触发回调事件
-            trigger && trigger();
+        } else {
+            console.log('1212121')
+            func({ countDownZero: _ms <=0 });
         }
     }
     return animation;
 }
 
-export function positiveTime(startDate, func, trigger) {
+export function positiveTime(startDate, getCurrentDay, func) {
     let timer;
     function animation() {
-        const now = dayjs();
+        const now = getCurrentDay();
         const _ms = now.diff(startDate);
         if (_ms > 0) {
             let _hh = now.diff(startDate, 'hour');
@@ -70,8 +78,6 @@ export function positiveTime(startDate, func, trigger) {
                 SS,
                 MS
             }, timer)
-        } else { // 触发回调事件
-            trigger && trigger();
         }
     }
     return animation;
