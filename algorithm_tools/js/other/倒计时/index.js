@@ -25,7 +25,7 @@ const getCurrentDay = () => dayjs().subtract(timeInternetDiff, 'millisecond')
 const [beginTime, endTime, current] = [dayjs(dateInfo.beginTime), dayjs(dateInfo.endTime), getCurrentDay()];
 
 if (current < beginTime) { // 未开始，倒计时
-    countDown(beginTime, getCurrentDay, (obj, timer) => {
+    countDown(beginTime, getCurrentDay, (obj) => {
         if (!obj.countDownZero) {
             console.log(customTime(obj), obj);
         } else {
