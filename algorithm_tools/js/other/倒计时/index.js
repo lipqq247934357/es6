@@ -21,25 +21,27 @@ const getCurrentDay = () => dayjs().subtract(timeInternetDiff, 'millisecond')
 const [beginTime, endTime, current] = [dayjs(dateInfo.beginTime), dayjs(dateInfo.endTime), getCurrentDay()];
 
 if (current < beginTime) { // 未开始，倒计时
-    countDown(beginTime, getCurrentDay, (obj) => {
+    countDown(beginTime, getCurrentDay, (obj, timer) => {
         if (!obj.countDownZero) {
-            console.log(customTime(obj), obj.countDownZero);
+            console.log(customTime(obj), obj);
         } else {
-            positiveTime(beginTime, getCurrentDay, (obj2, timer) => {
-                console.log(customTime(obj2));
-                if (!getCurrentDay().isBefore(endTime)) {
-                    clearTimeout(timer);
-                }
-            })();
+            setTimeout(() => {
+                positiveTime(beginTime, getCurrentDay, (obj, timer) => {
+                    console.log(customTime(obj), obj);
+                    if (!getCurrentDay().isBefore(endTime)) {
+                        clearTimeout(timer);
+                    }
+                })();
+            }, 1000)
         }
     })();
 
 } else if (current < endTime) { // 未结束，正计时
-    // positiveTime(beginTime, getCurrentDay, (obj, timer) => {
-    //     console.log(customTime(obj));
-    //     if (getCurrentDay().diff(endTime) > 0) {
-    //         clearTimeout(timer);
-    //     }
-    // })();
+    positiveTime(beginTime, getCurrentDay, (obj, timer) => {
+        console.log(customTime(obj));
+        if (getCurrentDay().diff(endTime) > 0) {
+            clearTimeout(timer);
+        }
+    })();
 } else { // 已结束
 }
