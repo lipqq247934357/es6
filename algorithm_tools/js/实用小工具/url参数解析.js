@@ -38,3 +38,5 @@ const getParamsByKey = (key) => {
     const query = new URLSearchParams(search);
     return query.get(key);
 }
+
+// 方案三：直接在项目搜索有没有类似代码
