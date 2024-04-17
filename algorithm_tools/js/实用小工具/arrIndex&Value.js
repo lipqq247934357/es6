@@ -1,7 +1,6 @@
 /**
  * 
- * 将数组转化成下标为key的对象
- * 
+ * 将数组转化成[{key:xxx, value: xxx}]
  */
 
 let arr = [

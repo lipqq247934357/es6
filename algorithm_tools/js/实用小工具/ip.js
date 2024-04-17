@@ -1,6 +1,7 @@
+import os from 'os';
 const getIp = function(){
     let ipStr = '';
-    const infaces=require('os').networkInterfaces();
+    const infaces= os.networkInterfaces();
     let bool=false;
     for(let i in infaces) {
         infaces[i].some(function(x){
