@@ -37,14 +37,12 @@ function ArrayToObject(arr1, arr2) {
  * 时间段格式化
  * @param {Number} duration 单位s
  */
-const formatDuration = function (duration) {
+export const formatDuration = function (duration) {
     let hours = parseInt((duration % (24 * 60 * 60)) / 3600) + '';
     let minutes = parseInt(((duration % (24 * 60 * 60)) % 3600) / 60) + '';
     let seconds = parseInt(((duration % (24 * 60 * 60)) % 3600) % 60) + '';
     return `${hours.padStart(2, '0')}:${minutes.padStart(2, '0')}:${seconds.padStart(2, '0')} `;
 };
-
-export default formatDuration;
 
 /**
  *
