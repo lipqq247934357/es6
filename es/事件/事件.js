@@ -19,24 +19,33 @@
 
 class EventEmitter {
     constructor() {
-        this.event = {};
+        this.events = new Map();
     }
 
     on(eventName, func) {
-        (this.event[eventName] || (this.event[eventName] = [])).push(func);
+        if (!this.events.has(eventName)) {
+            this.events.set(eventName, new Set());
+        }
+        this.events.get(eventName).add(func);
     }
 
-    emit(eventName, ...params) {
-        if (eventName && this.event[eventName]) {
-            this.event[eventName].forEach(cb => {
-                cb(...params);
-            })
+    off(eventName, func) {
+        if (this.events.has(eventName)) {
+            const eventListeners = this.events.get(eventName);
+            if (func) {
+                eventListeners.delete(func);
+            } else {
+                eventListeners.clear();
+            }
         }
     }
 
-    off(eventName = '') {
-        if (eventName && this.event[eventName]) {
-            this.event[eventName] = [];
+    emit(eventName, ...params) {
+        if (this.events.has(eventName)) {
+            const eventListeners = this.events.get(eventName);
+            eventListeners.forEach(cb => {
+                cb(...params);
+            });
         }
     }
 }
