@@ -23,7 +23,10 @@ console.log(m);
 let m2 = new Map();
 m2.set("name", 'lipeng');
 m2.set("age", '23');
+console.log('-------keys---------')
 console.log([...m2.keys()]);
+console.log('-------values---------')
 console.log([...m2.values()]);
+console.log('-------entries---------')
 console.log([...m2.entries()]);
 console.log(m2);

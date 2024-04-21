@@ -27,6 +27,19 @@ console.log(temp);
 // 5.遍历 遍历顺序和插入顺序一致
 let temp2 = new Set();
 temp2.add(1).add(2).add(4).add(3);
-console.log(temp2.keys());
-console.log(temp2.values());
-console.log(temp2.entries());
+console.log('-------keys---------')
+const keys = temp2.keys();
+([...keys]).forEach(item => console.log(item))
+console.log('-------values---------')
+const values = temp2.values();
+([...values]).forEach(item => console.log(item))
+console.log('-------entries---------')
+const entries = temp2.entries();
+([...entries]).forEach(item => console.log(item))
+console.log('-------forEach---------')
+temp2.forEach((value,key,set) => {
+  console.log(`value: ${value}, key: ${key}`)
+})
+
+// mdn地址: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set
+
