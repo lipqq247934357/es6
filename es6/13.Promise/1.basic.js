@@ -11,17 +11,14 @@ function timeout(ms) {
 
 // 多少ms之后打印出来结果
 console.log('1111');
-timeout(1000).then((value) => {
+timeout(300).then((value) => {
     console.log(value);
-});
-
-timeout(1000).then((value) => {
-    console.log(value);
+    return timeout(300); // 再次异步执行
 }).then((value) => {
-    console.log(value);
+    console.log('twice then', value);
 });
 
-
+// --------------------
 const func1 = async (task) => {
     console.log('2222');
     await Promise.resolve().then(() => {
@@ -32,7 +29,7 @@ const func1 = async (task) => {
 
 func1();
 
-
+// --------------------
 Promise.resolve("22").then(() => {
     console.log('111');
 }).then(() => {

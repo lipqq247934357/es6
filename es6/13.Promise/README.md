@@ -2,7 +2,7 @@
 
 ## Promise函数
 
-    1.Promise是一个函数或者一个类
+    1.Promise是一个函数
     2.接收一个函数作为参数，这个函数在主作用域中，可以访问主流程的数据和变量
     3.接收的函数接收resolve,reject作为参数，用来更新prmoise的状态
     4.new Promise()之后返回表示这个异步状态的对象
