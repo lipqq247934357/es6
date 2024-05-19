@@ -107,3 +107,45 @@ export const updatePointPosition = (str, number) => {
     }
     return arr.join("");
 };
+
+
+/**
+ * 
+ * @param {[]} data 
+ * @returns { [] }
+ */
+
+export const treeUtil = function (data) {
+
+    const tree = []; // 树
+    const pos = {}; // 一维数组
+
+    // 将数组转化为对象 便于查找
+    for (let i = 0; i < data.length; i++) {
+        pos[data[i].menuId] = data[i];
+    }
+    // 遍历数组建立树
+    for (let i = 0; i < data.length; i++) {
+        let item = data[i];
+        if (item.menuLevel === '1') { //一级菜单
+            tree.push(item);// 树的一级菜单
+        } else { // 子节点
+            let parentId = item['parentMenuId'].trim();
+            let parentMenu = pos[parentId]; // 获取父节点
+            pushItem(parentMenu.children || (parentMenu.children = []), item); // 给父亲增加自己
+        }
+    }
+
+    function pushItem(children, item) { // 根据menuOrder进行排序
+        if (children) {
+            let i = 0;
+            for (; i < children.length; i++) {
+                if (item.menuOrder < children[i].menuOrder) {
+                    break;
+                }
+            }
+            children.splice(i, 0, item);
+        }
+    }
+    return tree;
+};
