@@ -6,6 +6,9 @@
 
 ## 蜜蜂汇金时期
 
+    assetTrade资产交易平台： https://github.com/lipqq247934357/assetTrade
+    金融租赁平台： https://github.com/lipqq247934357/goldrent
+
 ## 高途时期
 
 ## 爱学习时期
