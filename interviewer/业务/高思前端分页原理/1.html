@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .page {
+      height: 300px;
+      width: 200px;
+      border: 1px solid black;
+      overflow: hidden;
+      position: relative;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    .content {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="content" class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
+    <p>Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+    <p>Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+  </div>
+  <button onclick="paginate()">Paginate</button>
+
+  <script>
+    function paginate() {
+      var content = document.getElementById('content');
+      var children = Array.from(content.children);
+      var pageHeight = 300;
+      var currentPage = null;
+      var restHeight = pageHeight;
+
+      children.forEach(child => {
+        var childHeight = child.offsetHeight;
+
+        if (childHeight > restHeight) {
+          // Child does not fit in the current page, create a new page
+          currentPage = createNewPage();
+          restHeight = pageHeight;
+        }
+
+        // Move the child to the current page
+        currentPage.appendChild(child);
+        restHeight -= childHeight;
+      });
+    }
+
+    function createNewPage() {
+      var page = document.createElement('div');
+      page.className = 'page';
+      document.body.appendChild(page);
+      return page;
+    }
+  </script>
+</body>
+</html>
