@@ -24,7 +24,7 @@ class EventEmitter {
 
     on(eventName, func) {
         if (!this.events.has(eventName)) {
-            this.events.set(eventName, new Set());
+            this.events.set(eventName, new Set([func]));
         }
         this.events.get(eventName).add(func);
     }
