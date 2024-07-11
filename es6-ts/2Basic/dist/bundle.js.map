@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","sources":["../src/index.ts"],"sourcesContent":["let numberA = 100;\nconsole.log(numberA + numberA);\n"],"names":[],"mappings":";;;CAAA,IAAI,OAAO,GAAG,GAAG,CAAC;CAClB,OAAO,CAAC,GAAG,CAAC,OAAO,GAAG,OAAO,CAAC;;;;;;"}

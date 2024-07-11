@@ -1,0 +1,15 @@
+{
+  //   "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "../dist/root",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "target": "ESNext"
+  },
+  "references": [{ "path": "../aaaa" }],
+  "include": ["./**/*.ts"]
+}
+
+// 打包自己的时候同时打包别人， 别人还需要开启 composite

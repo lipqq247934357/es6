@@ -1,0 +1,13 @@
+{
+  //   "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "outDir": "../dist/user",
+    "module": "NodeNext",
+    "baseUrl": ".",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext"
+  },
+  "include": ["./**/*.ts"]
+}

@@ -1,0 +1,136 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+
+    /* Projects */
+    "incremental": true /* Save .tsbuildinfo files to allow for incremental compilation of projects. */,
+    "composite": true /* Enable constraints that allow a TypeScript project to be used with project references. */,
+    "tsBuildInfoFile": "./.tsbuildinfo" /* Specify the path to .tsbuildinfo incremental compilation file. */,
+    // "disableSourceOfProjectReferenceRedirect": true,  /* Disable preferring source files instead of declaration files when referencing composite projects. */
+    // "disableSolutionSearching": true,                 /* Opt a project out of multi-project reference checking when editing. */
+    // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
+
+    /* 语言和环境 */
+    "target": "ES5" /* 根据最后打包的环境来设置,引入对应的声明文件 */,
+    "lib": ["ES6", "DOM"] /* 引入哪个运行环境 并且增加类型声明信息*/,
+    "jsx": "react" /* preserve jsx不转jsx  react就是 React.createElement  react-jsx 新版默认值 */,
+    // "experimentalDecorators": true /* 启用装饰器语法*/,
+    // "emitDecoratorMetadata": true /* 发射额元数据信息，默认使用装饰器都会开启这个值 */,
+    //"jsxFactory": "h" /*  为了preact提供 */,
+    //"jsxFragmentFactory": "Fragment" /* 针对fragement实现不同的功能 */,
+    // "jsxImportSource": "xxxx" /* 更改导入路径 */,
+    // "reactNamespace": "abc" /* React.createElement. */,
+    // "noLib": true /* Disable including any library files, including the default lib.d.ts. */,
+    // "useDefineForClassFields": true /* Emit ECMAScript-standard-compliant class fields. */,
+    // "moduleDetection": "auto" /*  当前文件如果有import export 就是模块 没有就是全局. 强制都是模块 */,
+
+    /* 模块 */
+    "module": "NodeNext" /* CJS(node规范) es6/2020/esnext  NodeNext  AMD UMD  systemjs微前端 */,
+    // "rootDir": "./" /* 根据指定的路径进行编译, 需要将不需要的做排除. 默认会推断所有的ts文件夹下文件 (配合exclude来使用)*/,
+    "moduleResolution": "NodeNext",
+    /* 
+      Classic 经典的解析方式(默认绝对路径 import 'a' 会默认找文件，递归向上找)
+      node 导入模块的时候 package.json (main, module, exports)
+      node16 , nodenext (支持exports导入)
+
+      需要配置allowImportingExtensions
+    */
+    "baseUrl": "./" /* 配置后可以采用绝对路径查找文件, 以当前的baseUrl为基准*/,
+    // 配置别名, 都是相对的baseURL
+    "paths": {
+      "@/shared/*": ["src/shared/*"]
+    } /* Specify a set of entries that re-map imports to additional lookup locations. */,
+    "rootDirs": [
+      "src/style",
+      "src/typings"
+    ] /* 将多个模块 虚拟到同一个目录中，输出的时候结果依然不对, 不会在业务代码中使用. 通常合并业务代码和.d.ts的关系*/,
+    // "typeRoots": [
+    //   "./node_modules/@types",
+    //   "src/typings"
+    // ] /* 默认查找'./node_modules/@types'. */,
+    // "types": [
+    //   // 需要加载的类型 必须在@types中, 告诉哪些@types 中的声明文件 需要加载进来
+    //   "node"
+    // ] /* Specify type package names to be included without being referenced in a source file. */,
+    // "allowUmdGlobalAccess": false /* 是否允许umd模块全局访问 */,
+    //  "moduleSuffixes": [".controller", ".service"] /* 对模块增添后缀进行查找 */,
+    // "allowImportingTsExtensions": true /* Allow imports to include TypeScript file extensions. Requires '--moduleResolution bundler' and either '--noEmit' or '--emitDeclarationOnly' to be set. */,
+    // "resolvePackageJsonExports": true /* 使用package.json中的exports字段来进行导入 */,
+    // "resolvePackageJsonImports": true /* 通过package.json中imports来进行解析 */,
+    // "customConditions": [] /* Conditions to set in addition to the resolver-specific defaults when resolving imports. */,
+    // "resolveJsonModule": true,                        /* Enable importing .json files. */
+    // "allowArbitraryExtensions": true /* 默认找同名文件的.d.ts声明文件,为false就是不进行查找 */,
+    // "noResolve": true /*  不再解析导入文件， 包含三斜线指令*/,
+
+    /* JavaScript Support */
+    "allowJs": true /* 可以在ts中导入js文件 */,
+    // "checkJs": true /* 启用错误检测js文件. */,
+    "maxNodeModuleJsDepth": 1 /*  在导入js模块的时候 默认node_modules向上查找层级 */,
+
+    /* 发射的目标文件 */
+    // "declaration": true /*  是否给当前文件编译出.d.ts文件来*/,
+    // "declarationMap": true /* 给.d.ts创造映射文件 可以映射ts文件. 用于第三方模块调试 */,
+    // "emitDeclarationOnly": true /* 只输出声明文件 不考虑js文件 */,
+    //"sourceMap": true /* 生成sourcemap映射文件*/,
+    //"inlineSourceMap": true /* sourcemap 包含在文件内部 */,
+    // "outFile": "./" /* 只有systemjs 和 amd才支持 */,
+    // "outDir": "./dist" /* 指定输出目录. */,
+    "removeComments": true /* 注释是否移除 */,
+    // "noEmit": true /* 编译时不输出内容 */,
+    // "importHelpers": true /* 所有的辅助方法 都从tslib导出 */,
+    // "importsNotUsedAsValues": "remove" /* 废弃了， 如果导入的文件有副作用 可能也会被删除*/,
+    // "downlevelIteration": true /* 生成的代码采用iterator来实现*/,
+    // "sourceRoot": "",                                 /* 给定原文件的根目录 debugger. */
+    // "mapRoot": "",                                    /* 应以sourcemap的目录  debugger*/
+    // "inlineSources": true /* 保证压缩后的文件依旧可以正常找到映射 */,
+    // "emitBOM": true /* 每个文件都有bom头. */,
+    // "newLine": "crlf" /*  widnows 的换行符  */,
+    // "stripInternal": true /* jsdoc中的注释如果增添了 internal 不会发生对于的声明的 */,
+    // "noEmitHelpers": true /* 没有tslib导入的过程但是方法依旧来自tslib. */,
+    // "noEmitOnError": true /* 如果类型出错不发射声明文件. */,
+    // "preserveConstEnums": true /* 我门希望常亮枚举也能生成声明文件 */,
+    // "declarationDir": "./types" /* 生成.d.ts存放目录 */,
+    // "preserveValueImports": true /* Preserve unused imported values in the JavaScript output that would otherwise be removed. */,
+
+    /* Interop Constraints 互相操作的约束 */
+    // "isolatedModules": true /* verbatimModuleSyntax 替代了 isolatedModules preserveValueImports importsNotUsedAsValues  */,
+    // "verbatimModuleSyntax": true /* import type 需要删除导入 import就不删除 */,
+    "allowSyntheticDefaultImports": true /* 解决es模块和 commonjs之间的兼容性问题 */,
+    "esModuleInterop": true /* 解析default属性, 如果开启后，默认也会让 allowSyntheticDefaultImports 开启 */,
+    // "preserveSymlinks": true,                         /* node 软链， webpack中的Symlinks */
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+
+    /* Type Checking */
+    // "strict": true /* Enable all strict type-checking options. */,
+    // "noImplicitAny": false /* 没有类型默认any */,
+    // "strictNullChecks": true /* 是否使用null检测 */,
+    // "strictFunctionTypes": true /* 是否开启函数参数的双向协变 */,
+    // "strictBindCallApply": true /* 严格检测bind call和 apply. */,
+    // "strictPropertyInitialization": false /* 严格检测类属性的声明. */,
+    // "noImplicitThis": true /* 类型this是any报错 . */,
+    // "useUnknownInCatchVariables": true /* catch参数是unknown */,
+    // "alwaysStrict": true /*  都要采用严格模式. */,
+    // "noUnusedLocals": true /*  变量为使用会报错 */,
+    // "noUnusedParameters": true /* 对为使用的参数错误提示 */,
+    // "exactOptionalPropertyTypes": true /*  可选类型 不能后续赋予值给undefined. */,
+    // "noImplicitReturns": true /* 每个条件都有有return. */,
+    // "noFallthroughCasesInSwitch": true /* Enable error reporting for fallthrough cases in switch statements. */,
+    // "noUncheckedIndexedAccess": true /* 任意类型 通过索引访问是否添加undefiend. */,
+    //"noImplicitOverride": true /* 重写要有override标识 */,
+    // "noPropertyAccessFromIndexSignature": true /* 访问索引签名的时候 必须采用[]的方式 */,
+    // "allowUnusedLabels": false /* 主要对循环的label做xian */,
+    // "allowUnreachableCode": true /* Disable error reporting for unreachable code. */,
+
+    /* Completeness */
+    // "skipDefaultLibCheck": true /* 跳过类库的检测 . */,
+    "skipLibCheck": true /* 跳过ts中的内置类型检测. */
+  }
+  // "exclude": ["./a.ts"]
+  // files 描述打包的入口
+
+  // "files": ["./src/index.ts"],
+  // "include": ["src/**/*", "types/**/*"], // 包含哪些
+  // "exclude": ["**/*.test.ts"], // 在包含中排出
+  // "extends": "./tsconfig.base.json"
+  // files,extends,include,exclude andreferences
+}
