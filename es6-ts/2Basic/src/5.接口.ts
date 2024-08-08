@@ -3,7 +3,7 @@
 
 // type和interface的区别
 // 一般情况下，描述对象，类，我们采用interface多一些，interface无法声明联合类型
-// type:可以快速声明类型 联合类型，工具类型只能采用type，type不能重名
+// type:可以快速声明类型；联合类型，交叉类型等其他区复杂类型只能用type，type不能重名
 
 // type用的更多，能用type就用type
 

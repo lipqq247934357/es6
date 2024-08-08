@@ -7,7 +7,7 @@ function sum1(a: any, b: any) {
   return a + b;
 }
 
-// 变量方式声明  赋予的值要满足定义的类型类型
+// 变量方式声明  赋予的值要满足定义的类型
 const sum2: (a: any, b: any) => any = function (a, b) {
   return a + b;
 };
