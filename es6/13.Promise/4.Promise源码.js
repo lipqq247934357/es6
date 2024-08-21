@@ -220,27 +220,25 @@ Promise.prototype.finally = function (callback) {
  * 当这个数组里的所有promise对象全部变为resolve状态的时候,执行resolve,返回数组
  * 当有一个promise状态为reject的时候返回reject，参数为第一个reject的参数
  */
-Promise.all = function (promises) {
-    return new Promise((resolve, reject) => {
-        let done = gen(promises.length, resolve);
-        promises.forEach((promise, index) => {
-            promise.then((value) => {
-                done(index, value)
-            }, reject)
-        })
-    })
-}
-
-function gen(length, resolve) {
-    let count = 0;
-    let values = [];
-    return function (i, value) {
-        values[i] = value;
-        if (++count === length) {
-            console.log(values);
-            resolve(values);
-        }
+Promise.all = (params) => {
+  return new Promise((resolve, reject) => {
+    const list = []; // 成功数组
+    let succNumber = 0; // 成功数量
+    
+    if (params.length === 0) {
+      resolve(list);
+      return;
     }
+
+    params.forEach((item, i) => {
+      item.then((res) => { // 确保 item 是一个 Promise
+      list[i] = res;
+      if (++succNumber === params.length) {
+      resolve(list);
+      }
+    }).catch(reject);
+    });
+  });
 }
 
 /**

@@ -68,6 +68,7 @@ r = r + 3;
 // type Extract<T, U> = T extends U ? T : never;
 type ExtractRes = Extract<1 | 2 | 3 | 4, 1 | 2>;
 
+// type Exclude<T, U> = T extends U ? never : T;
 type ExtractRes2 = Exclude<1 | 2 | 3 | 4, 1 | 2>;
 
  const ele = document.getElementById("app");

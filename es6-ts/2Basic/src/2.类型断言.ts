@@ -20,6 +20,12 @@ let strOrNum: string | number;
 
 (strOrNum! as unknown as boolean) // 双重断言，一般不建议使用
 
-let empty;
+
+let notEmpty: string |null;
+
+notEmpty = null;
+// 即使我们给notEmpty设置为了null，他也不会认为是null；
+console.log(notEmpty!.toString());
+
 
 export {};
