@@ -33,10 +33,10 @@
     -algorithm_tools
     -es5
     -es6
+    -es6-ts
     -interviewer
     -systemAlgorithms
     -temp
-    -ts
 
 ### tts2.0
 
