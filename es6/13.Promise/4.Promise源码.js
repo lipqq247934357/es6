@@ -22,11 +22,11 @@ function Promise(excutor) {
             return value.then(resolve, reject);
         }
 
-        // 为什么resolve 加setTimeout?
+        // 为什么resolve 加queueMicrotask?
         // 2.2.4规范 onFulfilled 和 onRejected 只允许在 execution context 栈仅包含平台代码时运行.
         // 注1 这里的平台代码指的是引擎、环境以及 promise 的实施代码。实践中要确保 onFulfilled 和 onRejected 方法异步执行，且应该在 then 方法被调用的那一轮事件循环之后的新执行栈中执行。
 
-        setTimeout(() => {
+        queueMicrotask(() => {
             // 调用resolve 回调对应onFulfilled函数
             if (that.status === PENDING) {
                 // 只能由pending状态 => fulfilled状态 (避免调用多次resolve reject)
@@ -38,7 +38,7 @@ function Promise(excutor) {
     }
 
     function reject(reason) { // reason失败态时接收的拒因
-        setTimeout(() => {
+        queueMicrotask(() => {
             // 调用reject 回调对应onRejected函数
             if (that.status === PENDING) {
                 // 只能由pending状态 => rejected状态 (避免调用多次resolve reject)
@@ -136,12 +136,12 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
             throw reason;
         };
 
-    // then里面的FULFILLED/REJECTED状态时 为什么要加setTimeout ?
+    // then里面的FULFILLED/REJECTED状态时 为什么要加queueMicrotask ?
     // 原因:
-    // 其一 2.2.4规范 要确保 onFulfilled 和 onRejected 方法异步执行(且应该在 then 方法被调用的那一轮事件循环之后的新执行栈中执行) 所以要在resolve里加上setTimeout
+    // 其一 2.2.4规范 要确保 onFulfilled 和 onRejected 方法异步执行(且应该在 then 方法被调用的那一轮事件循环之后的新执行栈中执行) 所以要在resolve里加上queueMicrotask
     // 其二 2.2.6规范 对于一个promise，它的then方法可以调用多次.（当在其他程序中多次调用同一个promise的then时 由于之前状态已经为FULFILLED/REJECTED状态，则会走的下面逻辑),所以要确保为FULFILLED/REJECTED状态后 也要异步执行onFulfilled/onRejected
 
-    // 其二 2.2.6规范 也是resolve函数里加setTimeout的原因
+    // 其二 2.2.6规范 也是resolve函数里加queueMicrotask的原因
     // 总之都是 让then方法异步执行 也就是确保onFulfilled/onRejected异步执行
 
     // 如下面这种情景 多次调用p1.then
@@ -158,7 +158,7 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
 
     if (that.status === FULFILLED) { // 成功态
         return newPromise = new Promise((resolve, reject) => {
-            setTimeout(() => {
+            queueMicrotask(() => {
                 try {
                     let x = onFulfilled(that.value);
                     resolvePromise(newPromise, x, resolve, reject); // 新的promise resolve 上一个onFulfilled的返回值
@@ -171,7 +171,7 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
 
     if (that.status === REJECTED) { // 失败态
         return newPromise = new Promise((resolve, reject) => {
-            setTimeout(() => {
+            queueMicrotask(() => {
                 try {
                     let x = onRejected(that.reason);
                     resolvePromise(newPromise, x, resolve, reject);
@@ -186,30 +186,33 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
         // 当异步调用resolve/rejected时 将onFulfilled/onRejected收集暂存到集合中
         return newPromise = new Promise((resolve, reject) => {
             that.onFulfilledCallbacks.push((value) => {
-                try {
-                    let x = onFulfilled(value);
-                    resolvePromise(newPromise, x, resolve, reject);
-                } catch (e) {
-                    reject(e);
-                }
+                queueMicrotask(() => {
+                    try {
+                        let x = onFulfilled(value);
+                        resolvePromise(newPromise, x, resolve, reject);
+                    } catch (e) {
+                        reject(e);
+                    }
+                })
             });
             that.onRejectedCallbacks.push((reason) => {
-                try {
-                    let x = onRejected(reason);
-                    resolvePromise(newPromise, x, resolve, reject);
-                } catch (e) {
-                    reject(e);
-                }
+                queueMicrotask(() => {
+                    try {
+                        let x = onRejected(reason);
+                        resolvePromise(newPromise, x, resolve, reject);
+                    } catch (e) {
+                        reject(e);
+                    }
+                })
             });
         });
     }
 };
 
 Promise.prototype.finally = function (callback) {
-    let P = this.constructor;
     return this.then(
-      value  => P.resolve(callback()).then(() => value),
-      reason => P.resolve(callback()).then(() => { throw reason })
+      value  => Promise.resolve(callback()).then(() => value),
+      reason => Promise.resolve(callback()).then(() => { throw reason })
     );
   };
 
@@ -249,7 +252,7 @@ Promise.all = (params) => {
  */
 Promise.race = function (promises) {
     return new Promise((resolve, reject) => {
-        promises.forEach((promise, index) => {
+        promises.forEach((promise) => {
             promise.then(resolve, reject);
         });
     });
@@ -260,7 +263,7 @@ Promise.prototype.catch = function (onRejected) {
     return this.then(null, onRejected);
 }
 
-Promise.resolve = function (value) {
+Promise.resolve = function (value) { 
     return new Promise(resolve => {
         resolve(value);
     });
@@ -290,6 +293,29 @@ Promise.deferred = function () { // 延迟对象
     return defer;
 }
 
+Promise.allSettled = function(promises) {
+    return new Promise((resolve) => {
+      let settledPromises = [];
+      let count = 0;
+  
+      promises.forEach((promise, index) => {
+        Promise.resolve(promise)
+          .then(value => {
+            settledPromises[index] = { status: 'fulfilled', value: value };
+          })
+          .catch(reason => {
+            settledPromises[index] = { status: 'rejected', reason: reason };
+          })
+          .finally(() => {
+            count++;
+            if (count === promises.length) {
+              resolve(settledPromises);
+            }
+          });
+      });
+    });
+  }
+
 /**
  * Promise/A+规范测试
  * npm i -g promises-aplus-tests
@@ -300,3 +326,4 @@ try {
     module.exports = Promise
 } catch (e) {
 }
+

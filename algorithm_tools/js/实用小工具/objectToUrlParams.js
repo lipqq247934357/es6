@@ -1,4 +1,4 @@
-import openDefaultBrowser from './openBrowser.js';
+import { openDefaultBrowser } from './nodeOperate.js';
 let data = {classTypeId: 132508, lessonId: 1127647202};
 let params = Object.entries(data).reduce((arr, [k, v]) => {
     return arr.push(`${k}=${v}`) && arr;

@@ -136,10 +136,10 @@ export const treeUtil = function (data) {
         }
     }
 
+    // 算法:插入到一个已经排序的数组里 这里可以使用二分查找，比遍历性能高一点
     function pushItem(children, item) { // 根据menuOrder进行排序
         if (children) {
-            let i = 0;
-            for (; i < children.length; i++) {
+            for (let i = 0; i < children.length; i++) {
                 if (item.menuOrder < children[i].menuOrder) {
                     break;
                 }

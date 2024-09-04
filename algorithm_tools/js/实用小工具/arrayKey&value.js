@@ -1,6 +1,7 @@
 import { strToArr } from "../utils.js";
 /**
- * 将key,value形式，拼接成el-table的代码结构
+ * 根据表头的名字和字段生成表头html
+ *  这个在生成表单头部的时候比较好用，但是使用的很少
  */
 /**
  * 

@@ -4,7 +4,8 @@
   "description": "You can use the [editor on GitHub](https://github.com/lipqq247934357/es6/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testPromise": "promises-aplus-tests es6/13.Promise/4.Promise源码.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/lipqq247934357/es6/issues"
   },
-  "homepage": "https://github.com/lipqq247934357/es6#readme"
+  "homepage": "https://github.com/lipqq247934357/es6#readme",
+  "devDependencies": {
+    "promises-aplus-tests": "^2.1.2"
+  }
 }

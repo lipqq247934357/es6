@@ -1,6 +1,6 @@
 /**
  * 
- * 将数组转化成[{key:xxx, value: xxx}]
+ * 将数组转化成[{key:item, value: index}]形式
  */
 
 let arr = [
