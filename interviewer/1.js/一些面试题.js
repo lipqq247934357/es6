@@ -23,6 +23,24 @@ console.log(p.id);
 console.log(p2.id);
 
 
+// promise链式调用版本
+const repeat1 = (fn, times, delay) => {
+  return async (...args) => {
+    let p = Promise.resolve();
+    for (let i = 0; i < times; i++) {
+      p = p.then(() => {
+        fn(...args)
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve();
+          }, delay)
+        })
+      })
+    }
+  }
+}
+
+// async await版本
 const repeat = (fn, times, delay) => {
   return async (...args) => {
     let p = Promise.resolve();
@@ -40,5 +58,5 @@ const repeat = (fn, times, delay) => {
 }
 
 // // 使下面调用代码能正常工作
-// const repeatFunc = repeat(console.log, 4, 3000);
-// repeatFunc("hello world");    //会输出4次 hello world, 每次间隔3秒
+const repeatFunc = repeat(console.log, 4, 3000);
+repeatFunc("hello world");    //会输出4次 hello world, 每次间隔3秒

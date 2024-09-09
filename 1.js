@@ -85,7 +85,7 @@
 //     let p = Promise.resolve();
 //     for (let i = 0; i < times; i++) {
 //       p = p.then(() => {
-//         return new Promise((resolve)=> {
+//         return new Promise((resolve) => {
 //           setTimeout(() => {
 //             fn(...args);
 //             resolve();
@@ -96,18 +96,24 @@
 //   }
 // }
 
-// const repeatFunc = repeat(console.log, 4, 1000);
-// repeatFunc("hello world");    //会输出4次 hello world, 每次间隔3秒
+
+const repeat = (func, times, interval) => {
+  return async (...params) => {
+    for (let i = 0; i < times; i++) {
+      await new Promise((resolve) => {
+        setTimeout(() => {
+          func(...params)
+          resolve();
+        }, interval)
+      })
+    }
+  }
+}
+
+const repeatFunc = repeat(console.log, 4, 1000);
+repeatFunc("hello world");    //会输出4次 hello world, 每次间隔3秒
 
 // 实现一个函数，每几秒执行一次，执行几次
 
-// const b = async () => {
-//   for (let i = 0; i < 3; i++) {
-//     setTimeout(() => {
-//     console.log('111')
-//     }, 600 * (i + 1))
-//   }
-// }
 
-// b();
 
