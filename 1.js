@@ -1,52 +1,38 @@
-// 写一个函数，间隔几秒执行
-// const repeat = (fn, times, delay) => {
-//   return async (...args) => {
-//     for (let i = 0; i < times; i++) {
-//       setTimeout(() => {
-//         fn(...args)
-//       }, delay * (i + 1))
-//     }
-//   }
-// }
-
-// const repeat = (fn, times, delay) => {
-//   return async (...args) => {
-//     let p = Promise.resolve();
-//     for (let i = 0; i < times; i++) {
-//       p = p.then(() => {
-//         fn(...args)
-//         return new Promise((resolve) => {
-//           setTimeout(() => {
-//             resolve();
-//           }, delay)
-//         })
-//       })
-//     }
-//   }
-// }
-
-// // 使下面调用代码能正常工作
-// const repeatFunc = repeat(console.log, 4, 3000);
-// repeatFunc("hello world");    //会输出4次 hello world, 每次间隔3秒
-
-// // 
-
-// function MyComponent() {
-
-//   const [count, setCount] = useState(0);
-
-//   useEffect(() => {
-//     setInterval(() => {
-//       setCount(count + 1);
-//     }, [])
-//   }, [])
-
-//   console.log('count', count)
-// }
-
-// 上面的执行结果是什么样的？如何改一下这个问题？
-
 // 写一个函数，遍历对象的同时，对对象的每一项执行函数
+
+function a(data, hash) {
+  if (!hash) hash = new Set();
+
+  const deal = (item) => {
+    // 处理非数组和非对象类型的数据
+    console.log('Dealing with:', item);
+  };
+
+  // 如果已经处理过该数据，则直接返回
+  if (hash.has(data)) {
+    return;
+  }
+
+  // 如果是数组，递归处理数组中的每一项
+  if (Array.isArray(data)) {
+    hash.add(data); // 标记为已处理
+    for (let item of data) {
+      a(item, hash); // 递归调用
+    }
+  }
+  // 如果是对象，递归处理对象中的每一个属性
+  else if (Object.prototype.toString.call(data) === '[object Object]') {
+    hash.add(data); // 标记为已处理
+    for (let key in data) {
+      a(data[key], hash); // 递归处理对象的属性值
+    }
+  }
+  // 如果是基本数据类型，处理该数据
+  else {
+    deal(data); // 处理非对象和数组的数据
+  }
+}
+
 
 // function tryTimes(asyncFn, times, context) {
 //   return async (...args) => {
@@ -74,46 +60,3 @@
 // }
 
 // (tryTimes(log1Delay, 3, {}))()
-
-// const repeatFunc = repeat(console.log, 4, 3000);
-// repeatFunc("hello world");    //会输出4次 hello world, 每次间隔3秒
-
-
-// const repeat = (fn, times, delay) => {
-//   // 1.返回一个函数，接收参数
-//   return (...args) => {
-//     let p = Promise.resolve();
-//     for (let i = 0; i < times; i++) {
-//       p = p.then(() => {
-//         return new Promise((resolve) => {
-//           setTimeout(() => {
-//             fn(...args);
-//             resolve();
-//           }, delay)
-//         })
-//       })
-//     }
-//   }
-// }
-
-
-const repeat = (func, times, interval) => {
-  return async (...params) => {
-    for (let i = 0; i < times; i++) {
-      await new Promise((resolve) => {
-        setTimeout(() => {
-          func(...params)
-          resolve();
-        }, interval)
-      })
-    }
-  }
-}
-
-const repeatFunc = repeat(console.log, 4, 1000);
-repeatFunc("hello world");    //会输出4次 hello world, 每次间隔3秒
-
-// 实现一个函数，每几秒执行一次，执行几次
-
-
-
