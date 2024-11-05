@@ -33,7 +33,9 @@ function getValue(this: IPerson, key: IKeys) {
 const person = { name: "lipeng", age: 23 };
 getValue.call(person, "name");
 
+// 返回对象的类型
 type IPerson = typeof person;
+// 返回对象的key组成的数组
 type IKeys = keyof IPerson;
 
 // 函数中有arguments，但不建议使用,可以使用...获取值

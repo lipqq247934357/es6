@@ -56,7 +56,7 @@
 // $.ajax("/url", {});
 // $.fn.extend({});
 
-import mitt, { Type, Listener } from "mi tt";
+import mitt, { Type, Listener } from "mitt";
 
 const fn: Listener = function () {};
 mitt.on("data", fn);
