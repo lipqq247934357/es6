@@ -6,6 +6,17 @@
   2.ts的绝大部分功能我已经了解了，主要是一些实战我还需要再去搞起来；
     比如:我在react中的什么场景下怎么使用ts,或者如何处理不同组件之间共享声明等
 
+## 项目通用场景
+
+1.只引入类型
+
+```tsx
+import type { RouteRecordRaw } from 'vue-router'
+```
+
+ts语法，只引入类型，这样可以减少编译的时候的体积
+
+
 ## react中的一些场景
 
   1.由于我目前主要做的react项目，所以先从react开始总结
@@ -70,4 +81,28 @@ const CustomInput = forwardRef<HTMLInputElement, InputProps>(({ label }, ref) =>
 
 export default CustomInput;
 
+```
+
+### useRef可以修改ref值
+
+```tsx
+  const hideLoadingRef = useRef<(() => void) | null>(null); // 用 useRef 存储 hide 函数
+```
+
+### this的时候，可以显式传入一个新的this
+
+```tsx
+class CustomObject extends fabric.Object {
+  id?: string;
+  name?: string;
+}
+
+fabric.Object.prototype.toObject = (function (toObject) {
+  return function (this: CustomObject) {
+    return fabric.util.object.extend(toObject.call(this), {
+      name: this.name || "",
+      id: this.id || "",
+    });
+  };
+})(fabric.Object.prototype.toObject);
 ```

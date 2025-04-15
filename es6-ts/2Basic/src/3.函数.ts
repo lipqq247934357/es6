@@ -27,6 +27,7 @@ const sumP1: IsumP = function (a, b) {
 
 // this
 // 尽量不用this作为函数的上下文，this的缺陷是推导问题
+// 不明确的this，就把对象传进去，this就指代这个对象，而不是直接使用this
 function getValue(this: IPerson, key: IKeys) {
   return this[key];
 }
