@@ -1,6 +1,8 @@
 /**
  * 
  * 将数组转化成[{key:item, value: index}]形式
+ * 非常简单：就是利用forEach遍历数组，将每个元素的索引和值分别赋值给label和value
+ * 
  */
 
 let arr = [

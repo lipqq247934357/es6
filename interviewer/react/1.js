@@ -8,7 +8,7 @@ function MyComponent1() {
   useEffect(() => {
     setInterval(() => {
       setCount(count + 1);
-    }, [])
+    }, 1000)
   }, [])
 
   console.log('count', count)
@@ -36,4 +36,4 @@ function MyComponent2() {
   );
 }
 
-export default MyComponent;
+export default MyComponent2;

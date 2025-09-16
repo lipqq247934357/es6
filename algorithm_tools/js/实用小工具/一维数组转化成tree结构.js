@@ -1,5 +1,20 @@
 import { treeUtil } from "../utils.js";
 
+/**
+ * 需求：
+ *  1.根据数据将一维数组转化成tree结构
+ *  2.数据特点：
+ *      1.menuLevel表示层级
+ *      2.parentMenuId表示上级节点的id
+ *      3.将非一级节点的数据通过父id，放到它的children里
+ * 
+ *  本质的解决方案：
+ *      就是将每个节点放到它父节点的children里
+ *      在遍历所有节点之后，所有的节点都放在了它父节点的children里
+ *      这样就形成了tree结构
+ * 
+ */
+
 const tree = treeUtil([
     {
         "menuId": "100100",
